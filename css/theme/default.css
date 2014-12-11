@@ -85,21 +85,30 @@ body {}
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
+
+.reveal .controls {
+	background: #fff;
+	background: rgba(255,255,255,0.8);
+	bottom: 40px;
+	right: 30px;
+	border-radius: 50%;
+}
+
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #f7a287; }
+  border-right-color: #44439b; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #f7a287; }
+  border-left-color: #44439b; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #f7a287; }
+  border-bottom-color: #44439b; display: none; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #f7a287; }
+  border-top-color: #44439b; display: none; }
 
 .reveal .controls div.navigate-left.enabled:hover {
   border-right-color: #ef4733; }

@@ -14,7 +14,17 @@ function ee_init()  {
 	add_image_size( 'portfolio', 450, 450, true );
 	add_image_size( 'person', 320, 420, true );
 	add_image_size( 'persondesktop', 365, 1000, true );
-	add_editor_style( 'editor-style.css' );	
+	add_editor_style( 'editor-style.css' );
+	$background_args = array(
+		'default-color'          => 'ffffff',
+		'default-image'          => '',
+		'default-repeat'         => '',
+		'default-position-x'     => '',
+		'wp-head-callback'       => '',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-background', $background_args );
 	$header_args = array(
 		'default-image'          => get_template_directory_uri() . '/img/header/header.png',
 		'width'                  => 2550,
@@ -580,6 +590,12 @@ function case_details( $meta_boxes ) {
                 'id' => $prefix . 'key',
                 'type' => 'wysiwyg'
             ),
+			array(
+			    'name' => 'Key Facts Colour Picker',
+			    'id'   => $prefix . 'keycolour',
+			    'type' => 'colorpicker',
+			    'default'  => '#e6c680'
+			),
             array(
                 'name' => 'Solution',
                 'desc' => '',

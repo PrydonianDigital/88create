@@ -1,6 +1,7 @@
 var $j = jQuery.noConflict();
 
 $j(function() {
+	//mobile toggle
 	$j('header').on('click', '.toggle', function(){
 		$j(this).addClass('activated')
 		$j('#mobile').addClass('active');
@@ -10,6 +11,7 @@ $j(function() {
 		$j('#mobile').removeClass('active');
 	});
 	
+	// legend
 	if($j.cookie('legend')) {
 		$j('#legend').hide();
 	} else {
@@ -19,7 +21,7 @@ $j(function() {
 			$j('#legend').hide();
 		});		
 	}
-	
+	// cookie
 	if($j.cookie('cookies')) {
 		$j('aside').hide();
 	} else {
@@ -30,6 +32,7 @@ $j(function() {
 		});		
 	}
 
+	// timeline
 	var $timeline_block = $j('.cd-timeline-block');
 	//hide timeline blocks which are outside the viewport
 	$timeline_block.each(function(){
@@ -37,6 +40,7 @@ $j(function() {
 			$j(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
 		}
 	});
+	
 	//on scolling, show/animate timeline blocks when enter the viewport
 	$j(window).on('scroll', function(){
 		$timeline_block.each(function(){
@@ -45,6 +49,8 @@ $j(function() {
 			}
 		});
 	});
+	
+	// skills
 	if(element_exists('.reveal')) {
 		Reveal.initialize({
 			width: 1200,
@@ -57,6 +63,8 @@ $j(function() {
 			Reveal.slide(link,0,0,0)
 		});
 	}
+	
+	// rollovers
 	if (element_exists('.rollover')){
 		var $width = $j('.rollover').width();
 		$j('.rollover').height($width);
@@ -70,146 +78,51 @@ $j(function() {
 		$j('.col-1-1 iframe').width($width);
 		$j('.col-1-1 iframe').sixteenbynine();
 	} 
-	if (element_exists('body.post-type-archive-work')){ 
-		var $width = $j('.portfolio').width();
-		$j('.project').height($width);
-		$j('.portfolio iframe').width($width);
-		$j('.portfolio iframe').sixteenbynine();
-		
-		var $container = $j('#portfolio');	
-		$container.isotope({
-			itemSelector: '.portfolio'
-		});
-		
-		$container.infinitescroll({
-			navSelector: '.navigation',
-			nextSelector: '.alignright a',
-			itemSelector: '#portfolio .portfolio'
-		},
-		function( newElements ) {
-			var $width = $j('.portfolio').width();
-			$j('.format-standard').height($width);
-			$j('.portfolio iframe').width($width);
-			$j('.portfolio iframe').sixteenbynine();
-			$container.isotope( 'appended', $j( newElements ) ); 
-		});	
-				
-		var $optionSets = $j('#filters'),
-		$optionLinks = $optionSets.find('a');
-		$optionLinks.click(function(){
-			var $this = $j(this);
-			if ( $this.hasClass('selected') ) {
-				return false;
-			}
-			var $optionSet = $this.parents('#filters');
-			$optionSets.find('.selected').removeClass('selected');
-			$this.addClass('selected');
-			var selector = $j(this).attr('data-filter');
-			$container.isotope({ filter: selector });
-			return false;
-		});
-	}
-	if (element_exists('body.blog')){ 
-		var $width = $j('.portfolio').width();
-		$j('.project').height($width);
-		$j('.portfolio iframe').width($width);
-		$j('.portfolio iframe').sixteenbynine();
-		
-		var $container = $j('#portfolio');	
-		$container.isotope({
-			itemSelector: '.portfolio'
-		});
-		
-		$container.infinitescroll({
-			navSelector: '.navigation',
-			nextSelector: '.alignright a',
-			itemSelector: '#portfolio .portfolio'
-		},
-		function( newElements ) {
-			var $width = $j('.portfolio').width();
-			$j('.project').height($width);
-			$j('.portfolio iframe').width($width);
-			$j('.portfolio iframe').sixteenbynine();
-			$container.isotope( 'appended', $j( newElements ) ); 
-		});	
-				
-		var $optionSets = $j('#filters'),
-		$optionLinks = $optionSets.find('a');
-		$optionLinks.click(function(){
-			var $this = $j(this);
-			if ( $this.hasClass('selected') ) {
-				return false;
-			}
-			var $optionSet = $this.parents('#filters');
-			$optionSets.find('.selected').removeClass('selected');
-			$this.addClass('selected');
-			var selector = $j(this).attr('data-filter');
-			$container.isotope({ filter: selector });
-			return false;
-		});
-	}
-	if (element_exists('body.post-type-archive-case_studies')){ 
-		var $width = $j('.portfolio').width();
-		$j('.portfolio').height($width);
-		$j('.portfolio iframe').width($width);
-		$j('.portfolio iframe').sixteenbynine();
-		
-		var $container = $j('#portfolio');	
-		$container.isotope({
-			itemSelector: '.portfolio'
-		});
-		
-		$container.infinitescroll({
-			navSelector: '.navigation',
-			nextSelector: '.alignright a',
-			itemSelector: '#portfolio .portfolio'
-		},
-		function( newElements ) {
-			var $width = $j('.portfolio').width();
-			$j('.format-standard').height($width);
-			$j('.portfolio iframe').width($width);
-			$j('.portfolio iframe').sixteenbynine();
-			$container.isotope( 'appended', $j( newElements ) ); 
-		});	
-				
-		var $optionSets = $j('#filters'),
-		$optionLinks = $optionSets.find('a');
-		$optionLinks.click(function(){
-			var $this = $j(this);
-			if ( $this.hasClass('selected') ) {
-				return false;
-			}
-			var $optionSet = $this.parents('#filters');
-			$optionSets.find('.selected').removeClass('selected');
-			$this.addClass('selected');
-			var selector = $j(this).attr('data-filter');
-			$container.isotope({ filter: selector });
-			return false;
-		});
-	}
 	
-	if (element_exists('body.blog')){
-		var $container = $j('#portfolio');
-		var $width = $j('.category-88create').width();
-		$j('.category-88create').height($width);
-		$j('.portfolio iframe').width($width);
-		$j('.portfolio iframe').sixteenbynine();
+	// masonry
+	if (element_exists('#portfolio')){ 
+		var $width = $j('.portfolio').width(),
+			$vidWidth = $j('.format-video').width();
+		$j('.portfolio:not(.format-video, .category-twitter)').height($width);
+		$j('.format-video iframe').width($vidWidth);
+		$j('.format-video iframe').sixteenbynine();
+		
+		var $container = $j('#portfolio');	
 		$container.isotope({
-			itemSelector: '.portfolio'
+			itemSelector: '.status-publish'
 		});
+		
 		$container.infinitescroll({
 			navSelector: '.navigation',
 			nextSelector: '.alignright a',
 			itemSelector: '#portfolio .portfolio'
 		},
 		function( newElements ) {
-			var $width = $j('.category-88create').width();
-			$j('.category-88create').height($width);
-			$j('.category-88create iframe').width($width);
-			$j('.category-88create iframe').sixteenbynine();
+			var $width = $j('.portfolio').width(),
+				$vidWidth = $j('.format-video').width();
+			$j('.portfolio:not(.format-video, .category-twitter)').height($width);
+			$j('.format-video iframe').width($vidWidth);
+			$j('.format-video iframe').sixteenbynine();
 			$container.isotope( 'appended', $j( newElements ) ); 
 		});	
+				
+		var $optionSets = $j('#filters'),
+		$optionLinks = $optionSets.find('a');
+		$optionLinks.click(function(){
+			var $this = $j(this);
+			if ( $this.hasClass('selected') ) {
+				return false;
+			}
+			var $optionSet = $this.parents('#filters');
+			$optionSets.find('.selected').removeClass('selected');
+			$this.addClass('selected');
+			var selector = $j(this).attr('data-filter');
+			$container.isotope({ filter: selector });
+			return false;
+		});
 	}
+
+	// map
 	if (element_exists('#map')){ 
 		$j("#map").gmap3({
 			map:{
@@ -247,6 +160,8 @@ $j(function() {
 			}
 		});
 	}
+	
+	// smooth scroll
 	$j('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $j(this.hash);
@@ -273,6 +188,7 @@ $j(function() {
 			$back_to_top.addClass('cd-fade-out');
 		}
 	});
+	
 	//smooth scroll to top
 	$back_to_top.on('click', function(event){
 		event.preventDefault();
@@ -281,15 +197,18 @@ $j(function() {
 		 	}, scroll_top_duration
 		);
 	});
+	
+	// on resize
 	$j(window).smartresize(function(){
 		if (element_exists('#portfolio')){
-			var $width = $j('.type-work').width();
-			$j('.format-standard').height($width);
-			$j('.type-work iframe').width($width);
-			$j('.type-work iframe').sixteenbynine();
+			var $width = $j('.portfolio').width(),
+				$vidWidth = $j('.format-video').width();
+			$j('.portfolio:not(.format-video, .category-twitter)').height($width);
+			$j('.format-video iframe').width($vidWidth);
+			$j('.format-video iframe').sixteenbynine();
 			var $container = $j('#portfolio');
 			$container.isotope({
-				itemSelector: '.type-work',
+				itemSelector: '.status-publish',
 				layoutMode: 'masonry',
 				animationOptions: 'best-available'
 			});			
@@ -298,6 +217,7 @@ $j(function() {
 
 });
 
+//functions
 function element_exists(id){
 	if($j(id).length > 0){
 		return true;

@@ -29,15 +29,54 @@
      888888888          888888888             CCCCCCCCCCCCC rrrrrrr                eeeeeeeeeeeeee  aaaaaaaaaa  aaaa         ttttttttttt      eeeeeeeeeeeeee  
 -->
 <style>
+<?php
+$background_color = get_background_color();
+?>
+<?php if(is_page()) { ?>
 <?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {
-		background-image: url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background: url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
 	}
 <?php endif; ?>
+<?php } elseif(is_archive()) { ?>
+	body {
+		background: #<?php echo $background_color; ?>;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
+<?php } elseif(is_home()) { ?>
+	body {
+		background: #<?php echo $background_color; ?>;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
+<?php } elseif(is_single()) { ?>
+	body {
+		background: #<?php echo $background_color; ?>;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
+<?php } else { ?>
+<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
+	body {
+		background: url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
+<?php endif; ?>
+<?php }  ?>
 <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	header h1 a, nav ul li a {
 		color: #fff;

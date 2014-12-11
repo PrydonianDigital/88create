@@ -16,7 +16,7 @@
 		</ul>
 	</div>
 </div>
-
+dfgsg
 <div class="grid" id="portfolio">
 	
 	<?php 

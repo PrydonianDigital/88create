@@ -3,10 +3,10 @@
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;	
 ?>
-<h2 class="aligncenter mainTitle"><?php the_title(); ?></h2>
+<h2 class="mainTitle"><?php the_title(); ?></h2>
 
 	<?php if (have_posts()) : ?>
-<div class="grid">	
+<div class="grid" id="service">	
 	<div class="col-1-1">
 	<?php while (have_posts()) : the_post(); ?>
 		
@@ -55,11 +55,10 @@ $detect = new Mobile_Detect;
 				while ( $services->have_posts() ) {
 					$services->the_post();
 		?>
-		<div <?php post_class('section col-1-1'); ?>>
+		<div <?php post_class('section col-1-1'); ?> id="<?php global $post; echo $post->post_name; ?>">
+		<h2 class="mainTitle"><?php the_title(); ?></h2>
+
 		<div class="grid">
-			<div class="col-1-1">
-				<h2 class="aligncenter" id="<?php global $post; echo $post->post_name; ?>"><?php the_title(); ?></h2>
-			</div>
 			<div class="col-1-2">
 				<?php global $post; $sh = get_post_meta( $post->ID, '_cmb_sh', true ); if( $sh != '' ) : ?>
 				<h2 class="subhead"><?php global $post; $sh = get_post_meta( $post->ID, '_cmb_sh', true ); echo $sh; ?></h2>

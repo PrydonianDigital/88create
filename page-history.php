@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<div id="about">
+	<h2 class="mainTitle"><?php the_title(); ?></h2>
+</div>
 <div class="grid small">
 	<section id="cd-timeline" class="cd-container">
 		<?php $args = array(

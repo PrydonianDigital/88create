@@ -27,21 +27,28 @@
 	}
 	<?php endif; ?>
 </style>
-<div class="grid">
+
+<div class="grid large">
+
+	<h2 class="mainTitle"><?php the_title(); ?></h2>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-	<div class="col-1-1">
-
-		<h2><?php the_title(); ?></h2>
-		<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); if($video != '') : ?>
-			<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); echo wp_oembed_get( $video ); ?>
-		<?php endif; ?>
-		<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if($bg != '') : ?>
-		<img src="<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>" alt="<?php the_title(); ?>">
-		<?php else : ?>
-		<?php the_content(); ?>
-		<?php endif; ?>
+	
+	<div class="grid">
+	
+		<div class="col-1-1">
+	
+			<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); if($video != '') : ?>
+				<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); echo wp_oembed_get( $video ); ?>
+			<?php endif; ?>
+			<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if($bg != '') : ?>
+			<img src="<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>" alt="<?php the_title(); ?>">
+			<?php else : ?>
+			<?php the_content(); ?>
+			<?php endif; ?>
+			<?php the_content(); ?>
+		</div>
+		
 	</div>
 	
 	<?php endwhile; ?>

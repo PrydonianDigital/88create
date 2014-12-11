@@ -27,20 +27,20 @@
 	}
 	<?php endif; ?>
 </style>
-<div class="grid">
+<div class="grid large">
+
+	<h2 class="mainTitle"><?php the_title(); ?></h2>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<div class="col-1-1 caseBg">
-		
-		<h2><?php the_title(); ?></h2>
-		
+	<div class="col-1-1">
+				
 		<div class="grid">
 			
 			<div class="col-1-4">
 				<h4>Brief</h4>
 				<?php the_content(); ?>
-				<div class="keyfacts">
+				<div class="keyfacts" <?php global $post; $kc = get_post_meta( $post->ID, '_cmb_keycolour', true ); if($kc != '') : ?>style="background: <?php global $post; $kc = get_post_meta( $post->ID, '_cmb_keycolour', true ); echo $kc; ?>"<?php endif; ?>>
 					<h4>Key Facts</h4>
 					<?php echo wpautop( get_post_meta( get_the_ID(), $prefix . '_cmb_key', true ) ); ?>
 				</div>
@@ -72,7 +72,7 @@
 				if ( $connected->have_posts() ) :
 				?>
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-				<div class="grid">
+				<div class="grid caseperson">
 				    <a href="<?php the_permalink(); ?>">
 					<div class="col-1-2">
 				    	<?php the_post_thumbnail('case'); ?>
