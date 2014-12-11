@@ -980,6 +980,13 @@ aside#cookies #close, aside.cookies #close i {
 	background: #fff !important;
 	background: rgba(255,255,255,0.8) !important;
 }
+#closeWork {
+	position: absolute;
+	top: 20px;
+	right: 40px;
+	font-size: 4rem;
+	color: #efefef;
+}
 
 /* --- GRID -- */
 

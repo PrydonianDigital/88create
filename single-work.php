@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
 <div class="grid large">
-
+	
+	<a href="/work/" id="closeWork" title="Back to Work"><i class="icon-cancel-circle"></i></a>
+	
 	<?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); if($title != '') : ?><h2 class="mainTitle"><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h2><?php endif; ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
