@@ -85,10 +85,10 @@ $(function() {
 			itemSelector: '#portfolio .portfolio'
 		},
 		function( newElements ) {
-		var $width = $('.portfolio').width();
-		$('.format-standard').height($width);
-		$('.portfolio iframe').width($width);
-		$('.portfolio iframe').sixteenbynine();
+			var $width = $('.portfolio').width();
+			$('.format-standard').height($width);
+			$('.portfolio iframe').width($width);
+			$('.portfolio iframe').sixteenbynine();
 			$container.isotope( 'appended', $( newElements ) ); 
 		});	
 				
@@ -124,10 +124,10 @@ $(function() {
 			itemSelector: '#portfolio .portfolio'
 		},
 		function( newElements ) {
-		var $width = $('.portfolio').width();
-		$('.format-standard').height($width);
-		$('.portfolio iframe').width($width);
-		$('.portfolio iframe').sixteenbynine();
+			var $width = $('.portfolio').width();
+			$('.project').height($width);
+			$('.portfolio iframe').width($width);
+			$('.portfolio iframe').sixteenbynine();
 			$container.isotope( 'appended', $( newElements ) ); 
 		});	
 				
@@ -163,10 +163,10 @@ $(function() {
 			itemSelector: '#portfolio .portfolio'
 		},
 		function( newElements ) {
-		var $width = $('.portfolio').width();
-		$('.format-standard').height($width);
-		$('.portfolio iframe').width($width);
-		$('.portfolio iframe').sixteenbynine();
+			var $width = $('.portfolio').width();
+			$('.format-standard').height($width);
+			$('.portfolio iframe').width($width);
+			$('.portfolio iframe').sixteenbynine();
 			$container.isotope( 'appended', $( newElements ) ); 
 		});	
 				

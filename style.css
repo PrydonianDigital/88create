@@ -375,8 +375,8 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	height: 100%;
 }
 #homePage {
-	-webkit-animation-duration: 3s;
-		animation-duration: 3s;
+	-webkit-animation-duration: 4s;
+		animation-duration: 4s;
 	-webkit-animation-fill-mode: both;
 		animation-fill-mode: both;
 }

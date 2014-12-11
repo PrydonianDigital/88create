@@ -894,3 +894,10 @@ function my_login_logo() { ?>
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function tweakjp_custom_twitter_site( $og_tags ) {
+    $og_tags['twitter:site'] = '@88Creates';
+    $og_tags['twitter:card'] = 'summary';
+    return $og_tags;
+}
+add_filter( 'jetpack_open_graph_tags', 'tweakjp_custom_twitter_site', 11 );
