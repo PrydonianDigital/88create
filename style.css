@@ -948,7 +948,7 @@ aside#cookies {
 	text-align: center;
 	color: #fff;
 	padding: 10px 0;
-	z-index: 2300;
+	z-index: 3300;
 }
 aside#cookies #close, aside.cookies #close i {
 	color: #fff;
