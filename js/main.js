@@ -134,14 +134,23 @@ $j(function() {
 
 				}
 			},
+			infowindow:{
+				latLng:[51.523803, -0.098877],
+				options:{
+					content: "<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href='tel:+442072518617'>+44 (0)20 7251 8617</a></p>"
+				},
+				events:{
+					closeclick: function(infowindow){}
+			}
+			},
 			marker:{
 				values: [
-					{latLng:[51.523803, -0.098877], data: '<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB</p>', options: {
+					{latLng:[51.523803, -0.098877], data: '<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p>', options: {
 						icon: '/wp-content/themes/88create/img/marker.png'
 					}}
 				],
 				events: {
-					mouseover: function(marker, event, context){
+					click: function(marker, event, context){
 						var map = $j(this).gmap3('get'),
 						infowindow = $j(this).gmap3({get:{name:"infowindow"}});
 						if (infowindow) {

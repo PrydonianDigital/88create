@@ -438,6 +438,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 #map p {
 	font-family: "88R", sans-serif;
 	font-weight: 400;
+	font-size: 1rem;
 }
 #contactform {
 	position: relative;
@@ -461,7 +462,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	text-transform: uppercase;
 	font-family: "88R", sans-serif;
 	font-weight: 400;
-	font-size: 3rem;
+	font-size: 5rem;
 	margin-top: 0;
 	line-height: 1.1;
 }
@@ -556,7 +557,7 @@ h2.aligncenter {
 }
 .mainTitle {
     font-family: "88R",sans-serif;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 400;
     line-height: 1.1;
     margin-top: 0;
