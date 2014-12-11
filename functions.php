@@ -675,6 +675,12 @@ function skillset( $meta_boxes ) {
                 'id' => $prefix . 'lh',
                 'type' => 'text_url'
             ),
+            array(
+                'name' => 'Background Image',
+                'desc' => '',
+                'id' => $prefix . 'bg',
+                'type' => 'file'
+            ),
         ),
     );
 

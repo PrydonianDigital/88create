@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <div id="legend">
 	To navigate, use your keyboards left and right arrow keys, click the arrows at the bottom right or swipe on mobile devices <a id="close" href="#close"><i class="icon-cancel-circle"></i></a>
 </div>
@@ -17,7 +18,7 @@
 				while ( $services->have_posts() ) {
 					$services->the_post();
 		?>
-			<section id="<?php global $post; echo $post->post_name; ?>">
+			<section id="<?php global $post; echo $post->post_name; ?>"<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?> data-background="<?php global $post; $lh = get_post_meta( $post->ID, '_cmb_lh', true ); echo $bg; ?>"<?php endif; ?>>
 				<h2><?php the_title(); ?></h2>
 				<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); if($video != '') : ?>
 				<div class="grid">

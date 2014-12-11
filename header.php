@@ -10,8 +10,9 @@
 <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <?php wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
+
 <style>
+<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {
 		background-image: url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
@@ -19,22 +20,23 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
-	<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
-		header h1 a, nav ul li a {
-			color: #fff;
-		}
-		header h1 a:hover {
-			color: #9992c4;
-		}
-		header {
-			border-color: #fff;
-		}
-		footer {
-			color: #fff;
-		}
-	<?php endif; ?>
-</style>
 <?php endif; ?>
+<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
+	header h1 a, nav ul li a {
+		color: #fff;
+	}
+	header h1 a:hover {
+		color: #9992c4;
+	}
+	header {
+		border-color: #fff;
+	}
+	footer {
+		color: #fff;
+	}
+<?php endif; ?>
+</style>
+
 </head>
 <body <?php body_class(); ?>>
 <?php
