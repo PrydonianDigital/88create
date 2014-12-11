@@ -10,7 +10,24 @@
 <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <?php wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
-
+<!--
+     888888888          888888888             CCCCCCCCCCCCC                                                                tttt                              
+   88:::::::::88      88:::::::::88        CCC::::::::::::C                                                             ttt:::t                              
+ 88:::::::::::::88  88:::::::::::::88    CC:::::::::::::::C                                                             t:::::t                              
+8::::::88888::::::88::::::88888::::::8  C:::::CCCCCCCC::::C                                                             t:::::t                              
+8:::::8     8:::::88:::::8     8:::::8 C:::::C       CCCCCCrrrrr   rrrrrrrrr       eeeeeeeeeeee    aaaaaaaaaaaaa  ttttttt:::::ttttttt        eeeeeeeeeeee    
+8:::::8     8:::::88:::::8     8:::::8C:::::C              r::::rrr:::::::::r    ee::::::::::::ee  a::::::::::::a t:::::::::::::::::t      ee::::::::::::ee  
+ 8:::::88888:::::8  8:::::88888:::::8 C:::::C              r:::::::::::::::::r  e::::::eeeee:::::eeaaaaaaaaa:::::at:::::::::::::::::t     e::::::eeeee:::::ee
+  8:::::::::::::8    8:::::::::::::8  C:::::C              rr::::::rrrrr::::::re::::::e     e:::::e         a::::atttttt:::::::tttttt    e::::::e     e:::::e
+ 8:::::88888:::::8  8:::::88888:::::8 C:::::C               r:::::r     r:::::re:::::::eeeee::::::e  aaaaaaa:::::a      t:::::t          e:::::::eeeee::::::e
+8:::::8     8:::::88:::::8     8:::::8C:::::C               r:::::r     rrrrrrre:::::::::::::::::e aa::::::::::::a      t:::::t          e:::::::::::::::::e 
+8:::::8     8:::::88:::::8     8:::::8C:::::C               r:::::r            e::::::eeeeeeeeeee a::::aaaa::::::a      t:::::t          e::::::eeeeeeeeeee  
+8:::::8     8:::::88:::::8     8:::::8 C:::::C       CCCCCC r:::::r            e:::::::e         a::::a    a:::::a      t:::::t    tttttte:::::::e           
+8::::::88888::::::88::::::88888::::::8  C:::::CCCCCCCC::::C r:::::r            e::::::::e        a::::a    a:::::a      t::::::tttt:::::te::::::::e          
+ 88:::::::::::::88  88:::::::::::::88    CC:::::::::::::::C r:::::r             e::::::::eeeeeeeea:::::aaaa::::::a      tt::::::::::::::t e::::::::eeeeeeee  
+   88:::::::::88      88:::::::::88        CCC::::::::::::C r:::::r              ee:::::::::::::e a::::::::::aa:::a       tt:::::::::::tt  ee:::::::::::::e  
+     888888888          888888888             CCCCCCCCCCCCC rrrrrrr                eeeeeeeeeeeeee  aaaaaaaaaa  aaaa         ttttttttttt      eeeeeeeeeeeeee  
+-->
 <style>
 <?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {

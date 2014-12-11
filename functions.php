@@ -1,7 +1,5 @@
 <?php
 
-
-
 function ee_init()  {
 	remove_action( 'wp_head', 'wp_generator' );
 	show_admin_bar( false );
@@ -12,6 +10,7 @@ function ee_init()  {
 	add_image_size( 'work',  700, 394, true );
 	add_image_size( 'big_case',  700, 700, true );
 	add_image_size( 'case', 510, 510, true );
+	add_image_size( 'timeline', 250, 150, true );
 	add_image_size( 'portfolio', 450, 450, true );
 	add_image_size( 'person', 320, 420, true );
 	add_image_size( 'persondesktop', 365, 1000, true );
@@ -52,7 +51,7 @@ function ee_css() {
 add_action( 'wp_enqueue_scripts', 'ee_css' );
 
 function ee_scripts() {
-	wp_deregister_script( 'jquery' );
+	//wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.js', false, '1.11.1', true );
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2.8.1', false );
 	wp_register_script( 'cookie', get_template_directory_uri() . '/js/cookie.js', false, '1.4.1', true );
@@ -872,9 +871,101 @@ add_filter('comment_text', 'twtreplace');
 
 function my_login_logo() { ?>
     <style type="text/css">
+		@font-face {
+			font-family: '88ROb';
+			src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.eot');
+			src: url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.eot?#iefix') format('embedded-opentype'),
+					 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.woff2') format('woff2'),
+					 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.woff') format('woff'),
+					 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.ttf') format('truetype'),
+					 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regularoblique-webfont.svg#88ROb') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: '88BOb';
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.eot');
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.woff2') format('woff2'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.woff') format('woff'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.ttf') format('truetype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-boldoblique-webfont.svg#88BOb') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: '88B';
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.eot');
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.woff2') format('woff2'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.woff') format('woff'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.ttf') format('truetype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-bold-webfont.svg#88B') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: '88R';
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.eot');
+			src:url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.woff2') format('woff2'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.woff') format('woff'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.ttf') format('truetype'),
+				 url('<?php echo get_stylesheet_directory_uri(); ?>/fonts/heroiccondensed-regular-webfont.svg#88R') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
         body.login  {
-	    	background: #efefef
+	    	background: url(<?php echo get_stylesheet_directory_uri(); ?>/img/acorns.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center top;
+			background-attachment: fixed;
+			font-family: '88R', sans-serif;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;	    	
 	    }
+	    .login label, #login_error {
+		    font-size: 1.8rem;
+			font-family: '88ROb', sans-serif;
+			text-transform: uppercase;
+			color: #000;
+			letter-spacing: 1px;
+	    }
+	    #login_error, .message {
+		    font-size: 1.4rem;
+		    line-height: 1.2;
+	    }
+	    .login form .forgetmenot label {
+		    font-size: 1.4rem;
+			font-family: '88ROb', sans-serif;
+			text-transform: uppercase;
+			color: #000;
+			letter-spacing: 1px;
+	    }
+	    .login .message {
+			border-left: 4px solid #00ad5f;
+	    }
+	    .login #login_error {
+		    border-left: 4px solid #ef4733;
+	    }
+	    .login form .input, .wp-core-ui .button, .login #nav, .login #backtoblog {
+			font-family: '88R', sans-serif;
+			font-size: 1.4rem;
+		}
+		.login form .input {
+			border-radius: 10px;
+			border: 1px solid #fff;
+			padding: 5px;
+			background: #fff;
+			background: rgba(255,255,255,0.9);
+			width: 100%;
+		}
+		.login #nav a, .login #backtoblog a {
+			color: #fff;
+		}
         body.login div#login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
             padding-bottom: 30px;
@@ -890,6 +981,11 @@ function my_login_logo() { ?>
 		    text-decoration: none;
 		    text-indent: -9999px;
 		    width: 146px;
+		}
+		.login form {
+			background: #93afba;
+			background: rgba(147,175,186,0.8);
+			border-radius: 10px;
 		}
     </style>
 <?php }

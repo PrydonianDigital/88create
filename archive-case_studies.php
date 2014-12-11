@@ -8,7 +8,7 @@
 		background-attachment: fixed;
 	}	
 </style>
-<div class="grid">
+<!--div class="grid">
 	<div class="col-1-1">
 		<ul id="filters" class="aligncenter">
 		    <li><a href="#" data-filter="*" class="selected">Everything</a></li>
@@ -23,7 +23,7 @@
 			?>
 		</ul>
 	</div>
-</div>
+</div-->
 
 <div class="grid" id="portfolio">
 	<?php 

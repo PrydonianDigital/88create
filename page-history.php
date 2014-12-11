@@ -13,6 +13,9 @@
 				<div class="cd-timeline-img cd-default"></div>
 	            <div class="cd-timeline-content">
 	            	<!--h2><?php the_title(); ?></h2-->
+	                <div class="timelineleft">
+						<?php the_post_thumbnail('timeline'); ?>
+	                </div>
 	                <?php the_content(); ?>
 	                <span class="cd-date"><?php global $post; $text = get_post_meta( $post->ID, '_cmb_year', true ); echo $text; ?></span>
 	            </div>
