@@ -2,7 +2,7 @@
 
 <div class="grid large">
 
-	<h2 class="mainTitle"><?php the_title(); ?></h2>
+	<?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); if($title != '') : ?><h2 class="mainTitle"><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h2><?php endif; ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	

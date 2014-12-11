@@ -638,6 +638,12 @@ function workStuff( $meta_boxes ) {
         'show_names' => true, // Show field names on the left
         'fields' => array(
             array(
+                'name' => 'Display Title',
+                'desc' => 'Enter a title to show on the work display page.',
+                'id' => $prefix . 'title',
+                'type' => 'text'
+            ),
+            array(
                 'name' => 'Video',
                 'desc' => 'Enter a YouTube, Vimeo, Twitter, or Instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
                 'id' => $prefix . 'v',
