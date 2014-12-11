@@ -35,11 +35,14 @@ $background_color = get_background_color();
 <?php if(is_page()) { ?>
 <?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {
-		background: url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
+	}
+	.mainTitle {
+		text-shadow: 1px 1px 1px #fff;
 	}
 <?php endif; ?>
 <?php } elseif(is_archive()) { ?>
@@ -60,12 +63,18 @@ $background_color = get_background_color();
 	}
 <?php } elseif(is_single()) { ?>
 	body {
-		background: #<?php echo $background_color; ?>;
+		background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
 	}
+<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
+	.mainTitle {
+		color: #efefef;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+	}
+<?php endif; ?>
 <?php } else { ?>
 <?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {

@@ -480,11 +480,13 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	left: 20px;
 	font-size: 10rem;
 	width: 400px;
+	height: auto;
 	text-transform: uppercase;
 	font-family: "88BOb", sans-serif;
 	margin: 0;
 	word-spacing: 400px;
 	line-height: 1;
+	
 }
 #form input[type='text'], #form input[type='email'], #form textarea {
 	border-radius: 10px;
@@ -739,15 +741,13 @@ h2.aligncenter {
 	text-decoration: none;
 }
 .portfolio {
-	background: #a2b3bd;
-	background: rgba(162,179,189,0.8);
+	background: #ffffff;
 	padding: 0 !important;
 	margin: 0 !important;
 	overflow: hidden;
 }
 .format-quote, .format-video {
-	background: #a2b3bd;
-	background: rgba(162,179,189,0.8);
+	background: #fff;
 }
 .format-video {
 	
@@ -780,7 +780,7 @@ h2.aligncenter {
 		transition: all 1s ease;
 }
 .portfolio:hover .thumbnail img {
-	opacity: 0.5;
+	opacity: 0.3;
 }
 .portfolio:hover .thumbnail i {
 	opacity: 1;
@@ -805,7 +805,7 @@ h2.aligncenter {
 	display: inline;
 }
 .single .col-1-1, .error404 .col-1-1, .bg {
-	background: rgba(162, 179, 189, 0.8);
+	background: rgba(255,255,255, 0.8);
 }
 .person {
 	padding: 0 !important;

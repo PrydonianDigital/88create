@@ -627,10 +627,10 @@ function case_details( $meta_boxes ) {
 }
 add_filter( 'cmb_meta_boxes', 'case_details' );
 
-function video( $meta_boxes ) {
+function workStuff( $meta_boxes ) {
     $prefix = '_cmb_'; // Prefix for all fields
-    $meta_boxes['video_metabox'] = array(
-        'id' => 'video',
+    $meta_boxes['workStuff_metabox'] = array(
+        'id' => 'workStuff',
         'title' => 'Video',
         'pages' => array('work'), // post type
         'context' => 'normal',
@@ -660,7 +660,7 @@ function video( $meta_boxes ) {
 
     return $meta_boxes;
 }
-add_filter( 'cmb_meta_boxes', 'video' );
+add_filter( 'cmb_meta_boxes', 'workStuff' );
 
 function skillset( $meta_boxes ) {
     $prefix = '_cmb_'; // Prefix for all fields
