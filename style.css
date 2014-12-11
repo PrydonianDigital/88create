@@ -156,6 +156,10 @@ body {
 	letter-spacing: 1px;
 	overflow-x: hidden;
 }
+svg {
+	position: absolute;
+	top: -800px;
+}
 strong {
 	font-family: "88R", sans-serif;
 	font-weight: 700;
