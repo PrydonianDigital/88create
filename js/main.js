@@ -135,7 +135,7 @@ $j(function() {
 				}
 			},
 			infowindow:{
-				latLng:[51.523803, -0.098877],
+				latLng:[51.52419, -0.098877],
 				options:{
 					content: "<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href='tel:+442072518617'>+44 (0)20 7251 8617</a></p>"
 				},
