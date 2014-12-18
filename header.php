@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <?php wp_head(); ?>
+<script src="//use.typekit.net/rwx4edd.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <!--
      888888888          888888888             CCCCCCCCCCCCC                                                                tttt                              

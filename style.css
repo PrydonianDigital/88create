@@ -7,50 +7,6 @@ Author URI: http://www.prydonian.digital
 Version: 1.0.0
 */
 @font-face {
-	font-family: '88ROb';
-	src: url('fonts/heroiccondensed-regularoblique-webfont.eot');
-	src: url('fonts/heroiccondensed-regularoblique-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('fonts/heroiccondensed-regularoblique-webfont.woff2') format('woff2'),
-			 url('fonts/heroiccondensed-regularoblique-webfont.woff') format('woff'),
-			 url('fonts/heroiccondensed-regularoblique-webfont.ttf') format('truetype'),
-			 url('fonts/heroiccondensed-regularoblique-webfont.svg#88ROb') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: '88BOb';
-	src:url('fonts/heroiccondensed-boldoblique-webfont.eot');
-	src:url('fonts/heroiccondensed-boldoblique-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/heroiccondensed-boldoblique-webfont.woff2') format('woff2'),
-		 url('fonts/heroiccondensed-boldoblique-webfont.woff') format('woff'),
-		 url('fonts/heroiccondensed-boldoblique-webfont.ttf') format('truetype'),
-		 url('fonts/heroiccondensed-boldoblique-webfont.svg#88BOb') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: '88B';
-	src:url('fonts/heroiccondensed-bold-webfont.eot');
-	src:url('fonts/heroiccondensed-bold-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/heroiccondensed-bold-webfont.woff2') format('woff2'),
-		 url('fonts/heroiccondensed-bold-webfont.woff') format('woff'),
-		 url('fonts/heroiccondensed-bold-webfont.ttf') format('truetype'),
-		 url('fonts/heroiccondensed-bold-webfont.svg#88B') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: '88R';
-	src:url('fonts/heroiccondensed-regular-webfont.eot');
-	src:url('fonts/heroiccondensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('fonts/heroiccondensed-regular-webfont.woff2') format('woff2'),
-		 url('fonts/heroiccondensed-regular-webfont.woff') format('woff'),
-		 url('fonts/heroiccondensed-regular-webfont.ttf') format('truetype'),
-		 url('fonts/heroiccondensed-regular-webfont.svg#88R') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
 	font-family: 'icomoon';
 	src:url('fonts/icomoon.eot?thhsdp');
 	src:url('fonts/icomoon.eot?#iefixthhsdp') format('embedded-opentype'),
@@ -149,7 +105,7 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-size: 1.4rem;
 	line-height: 1.2;
 	font-weight: 100;
@@ -161,14 +117,14 @@ svg {
 	top: -800px;
 }
 strong {
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 700;
 }
 em {
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "88B", sans-serif;
+	font-family: "league-gothic-condensed", sans-serif;
 	font-weight: 700;
 	margin-top: 0;
 }
@@ -231,7 +187,7 @@ nav#desktop ul {
 	list-style: none;
 }
 nav#desktop ul li {
-	font-family: "88ROb";
+	font-family: "league-gothic";
 	letter-spacing: 1px;
 	display: inline-block;
 	line-height: 60px;
@@ -396,7 +352,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	letter-spacing: 5px;
 	font-weight: 300;
 	text-align: center;
-	font-family: "88B";
+	font-family: "league-gothic-condensed";
 	margin-top: -150px;
 }
 #plus {
@@ -411,7 +367,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	margin: -180px 0 0 -20px;
 	z-index: 20;
 	color: #000;
-	font-family: "88B";
+	font-family: "league-gothic-condensed";
 }
 #take {
 	left: 50%;
@@ -435,12 +391,12 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 #map h4 {
 	font-size: 2rem;
 	margin-bottom: 0;
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 400;
 	text-transform: uppercase;
 }
 #map p {
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 400;
 	font-size: 1rem;
 }
@@ -460,11 +416,11 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	margin: 0 20px;
 	width: 600px;
 	color: #fff;
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 }
 .content h2 {
 	text-transform: uppercase;
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 400;
 	font-size: 5rem;
 	margin-top: 0;
@@ -528,12 +484,12 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 }
 label {
 	text-transform: uppercase;
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-size: 2rem;
 }
 label span {
 	text-transform: capitalize;
-	font-family: "88R", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-size: 1.2rem;
 }
 .alignleft {
@@ -553,14 +509,14 @@ label span {
 	margin: 0 auto;
 }
 h2.aligncenter {
-	font-family: "88R",sans-serif;
+	font-family: "league-gothic",sans-serif;
 		font-size: 3rem;
 		font-weight: 400;
 		margin-top: 0;
 		text-transform: uppercase;
 }
 .mainTitle {
-    font-family: "88R",sans-serif;
+    font-family: "league-gothic",sans-serif;
     font-size: 5rem;
     font-weight: 400;
     line-height: 1.1;
@@ -569,7 +525,7 @@ h2.aligncenter {
     padding: 40px 0 0 20px;
 }
 .subhead {
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	text-transform: uppercase;
 }
 .rollover {
@@ -705,7 +661,7 @@ h2.aligncenter {
 	border: 1px solid #44439b;
 	text-decoration: none;
 	color: #fff;
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
 	font-size: 1.2rem;
@@ -733,7 +689,7 @@ h2.aligncenter {
 	margin: 0 0 10px 0;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: "88ROb", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 300;
 }
 .portfolio a {
@@ -1512,7 +1468,7 @@ table > tfoot > tr.danger > th {
 		color: #333;
 	}
 	.mobileRollover h3 {
-		font-family: "88ROb", sans-serif;
+		font-family: "league-gothic", sans-serif;
 		text-transform: uppercase;
 	}
 }
@@ -1789,7 +1745,7 @@ table > tfoot > tr.danger > th {
 		font-size: 18px;
 		font-size: 1.6rem;
 		line-height: 62px;
-	font-family: "88ROb";
+	font-family: "league-gothic";
 	}
 	.cd-timeline-block:nth-child(even) .cd-timeline-content {
 		float: right;
