@@ -704,6 +704,9 @@ h2.aligncenter {
 	color: #111;
 	text-decoration: none;
 }
+.type-work img.wp-post-image {
+	border-radius: 50%;
+}
 .portfolio {
 	background: #ffffff;
 	padding: 0 !important;
