@@ -37,7 +37,7 @@ $background_image = get_background_image();
 		if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); 
 		$terms = wp_get_post_terms( $work->post->ID, array( 'type' ) );
 	?>
-	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'work' ); $url = $thumb['0']; ?>
+	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'portfolio' ); $url = $thumb['0']; ?>
 	
 	<?php if ( 'video' == get_post_format() ) { ?>
 	
@@ -51,7 +51,7 @@ $background_image = get_background_image();
 		<div <?php post_class('col-1-3 portfolio'); ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
 				<div class="thumbnail">
-					<?php the_post_thumbnail('portfolio', array( 'class' => "attachment-portfolio lazy")); ?><i class="icon-zoomin"></i>
+					<img class="lazy" data-original="<?php echo $url; ?>">
 				</div>
 			</a>
 		</div>
