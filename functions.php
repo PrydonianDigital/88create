@@ -66,6 +66,7 @@ function ee_scripts() {
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js', false, '2.8.1', false );
 	wp_register_script( 'cookie', get_template_directory_uri() . '/js/cookie.js', false, '1.4.1', true );
 	wp_register_script( 'isotope', get_template_directory_uri() . '/js/isotope.js', false, '2.1.0', true );
+	wp_register_script( 'lazyload', get_template_directory_uri() . '/js/lazyload.js', false, '1.9.3', true );
 	wp_register_script( 'infinite', get_template_directory_uri() . '/js/infinite_scroll.js', false, '2.1.0', true );
 	wp_register_script( 'gmap', '//maps.googleapis.com/maps/api/js?sensor=false&region=GB', false, '6.0.0', true );
 	wp_register_script( 'gmap3', get_template_directory_uri() . '/js/gmap3.js', false, '6.0.0', true );
@@ -89,7 +90,7 @@ add_action('wp_enqueue_scripts', 'map');
 function workPage() {
     if ( is_post_type_archive(array('work', 'case_studies')) ) {
         wp_enqueue_script('isotope');
-        wp_enqueue_script('infinite');
+        wp_enqueue_script('lazyload');
     } 
 }
 add_action('wp_enqueue_scripts', 'workPage');

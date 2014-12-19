@@ -87,24 +87,14 @@ $j(function() {
 		$j('.format-video iframe').width($vidWidth);
 		$j('.format-video iframe').sixteenbynine();
 		
-		var $container = $j('#portfolio');	
+		var $container = $j('#portfolio'),
+			$imgs = $j('img.lazy');	
 		$container.isotope({
 			itemSelector: '.status-publish'
 		});
-		
-		$container.infinitescroll({
-			navSelector: '.navigation',
-			nextSelector: '.alignright a',
-			itemSelector: '#portfolio .portfolio'
-		},
-		function( newElements ) {
-			var $width = $j('.portfolio').width(),
-				$vidWidth = $j('.format-video').width();
-			$j('.portfolio:not(.format-video, .category-twitter)').height($width);
-			$j('.format-video iframe').width($vidWidth);
-			$j('.format-video iframe').sixteenbynine();
-			$container.isotope( 'appended', $j( newElements ) ); 
-		});	
+		$imgs.lazyload({
+        	failure_limit: Math.max($imgs.length - 1, 0)
+        });	
 				
 		var $optionSets = $j('#filters'),
 		$optionLinks = $optionSets.find('a');

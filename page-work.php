@@ -9,7 +9,7 @@
 				$count = count($terms);
 				if ( $count > 0 ) {
 					foreach ( $terms as $term ) {
-						echo "<li><a href='#' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
+						echo "<li><a href='#" . $term->name . "' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
 					}
 				} 
 			?>
