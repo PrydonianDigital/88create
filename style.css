@@ -756,6 +756,9 @@ h2.aligncenter {
 	max-width: 100%;
 	height: auto;
 }
+.reveal {
+	font-size: 1.4rem;
+}
 .tweet , .padding {
 	padding: 20px;
 	overflow: hidden;
