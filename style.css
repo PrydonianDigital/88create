@@ -704,7 +704,7 @@ h2.aligncenter {
 	color: #111;
 	text-decoration: none;
 }
-.type-work img.wp-post-image {
+.type-work img.lazy {
 	border-radius: 50%;
 }
 .portfolio {
