@@ -702,6 +702,12 @@ function skillset( $meta_boxes ) {
                 'id' => $prefix . 'bg',
                 'type' => 'file'
             ),
+            array(
+                'name' => 'Dark Background',
+                'desc' => '',
+                'id' => $prefix . 'dbg',
+                'type' => 'checkbox'
+            ),
         ),
     );
 
