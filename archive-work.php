@@ -51,7 +51,7 @@ $background_image = get_background_image();
 		<div <?php post_class('col-1-3 portfolio'); ?>>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
 				<div class="thumbnail">
-					<img class="lazy" data-original="<?php echo $url; ?>">
+					<img class="lazy" data-original="<?php echo $url; ?>" ><i class="icon-zoomin"></i>
 				</div>
 			</a>
 		</div>
