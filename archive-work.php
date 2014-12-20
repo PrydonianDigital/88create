@@ -51,7 +51,11 @@ $background_image = get_background_image();
 		<div <?php post_class('col-1-3 portfolio'); ?> data-filters="<?php foreach ( $terms as $term ) : ?><?php echo $term->slug; ?><?php endforeach; ?>">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
 				<div class="thumbnail">
+<<<<<<< HEAD
 					<?php the_post_thumbnail('portfolio lazy'); ?><i class="icon-zoomin"></i>
+=======
+					<img class="lazy" data-original="<?php echo $url; ?>">
+>>>>>>> FETCH_HEAD
 				</div>
 			</a>
 		</div>

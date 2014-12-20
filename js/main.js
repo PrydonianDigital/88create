@@ -31,6 +31,10 @@ $j(function() {
 			$j('aside').hide();
 		});		
 	}
+	
+	if(element_exists('#homePageAbout')) {
+		$j('#leftroundel, #rightroundel, #plus').delay(2000).fadeOut(2000);
+	}
 
 	// timeline
 	var $timeline_block = $j('.cd-timeline-block');
