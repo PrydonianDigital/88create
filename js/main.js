@@ -89,9 +89,13 @@ $j(function() {
 		
 		var $container = $j('#portfolio'),
 			$imgs = $j('img.lazy');	
+			
+		$imgs.lazyload();
+		
 		$container.isotope({
 			itemSelector: '.status-publish'
 		});
+		
 		$imgs.lazyload({
         	failure_limit: Math.max($imgs.length - 1, 0)
         });	

@@ -11,7 +11,7 @@ function ee_init()  {
 	add_image_size( 'big_case',  700, 700, true );
 	add_image_size( 'case', 510, 510, true );
 	add_image_size( 'timeline', 250, 150, true );
-	add_image_size( 'portfolio', 450, 450, true );
+	add_image_size( 'portfolio', 320, 320, true );
 	add_image_size( 'person', 320, 420, true );
 	add_image_size( 'persondesktop', 365, 1000, true );
 	add_editor_style( 'editor-style.css' );
@@ -96,7 +96,7 @@ function workPage() {
 add_action('wp_enqueue_scripts', 'workPage');
 
 function skillsPage() {
-    if ( is_page(array('create')) ) {
+    if ( is_page(array('create', 'engage', 'about')) ) {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
@@ -120,6 +120,45 @@ function ee_menu() {
 	register_nav_menus( $locations );
 }
 add_action( 'init', 'ee_menu' );
+
+// Register Engage Post Type
+function engage() {
+	$labels = array(
+		'name'                => _x( 'Engage', 'Post Type General Name', 'ee' ),
+		'singular_name'       => _x( 'Engage', 'Post Type Singular Name', 'ee' ),
+		'menu_name'           => __( 'Engage', 'ee' ),
+		'parent_item_colon'   => __( 'Parent Engage:', 'ee' ),
+		'all_items'           => __( 'All Engage', 'ee' ),
+		'view_item'           => __( 'View Engage', 'ee' ),
+		'add_new_item'        => __( 'Add New Engage', 'ee' ),
+		'add_new'             => __( 'Add New', 'ee' ),
+		'edit_item'           => __( 'Edit Engage', 'ee' ),
+		'update_item'         => __( 'Update Engage', 'ee' ),
+		'search_items'        => __( 'Search Engage', 'ee' ),
+		'not_found'           => __( 'Not found', 'ee' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'ee' ),
+	);
+	$args = array(
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', ),
+		'taxonomies'          => array( 'category', 'post_tag' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => true,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'engage', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'engage', 0 );
 
 // Register Portfolio Post Type
 function portfolio() {
@@ -690,31 +729,13 @@ add_filter( 'cmb_meta_boxes', 'workStuff' );
 function skillset( $meta_boxes ) {
     $prefix = '_cmb_'; // Prefix for all fields
     $meta_boxes['video_metabox'] = array(
-        'id' => 'video',
-        'title' => 'Video',
-        'pages' => array('skill'), // post type
+        'id' => 'extras',
+        'title' => 'Extras',
+        'pages' => array('skill', 'engage'), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'fields' => array(
-            array(
-                'name' => 'Video',
-                'desc' => 'Enter a YouTube, Vimeo, Twitter, or Instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
-                'id' => $prefix . 'v',
-                'type' => 'oembed'
-            ),
-            array(
-                'name' => 'Link',
-                'desc' => 'Enter link text',
-                'id' => $prefix . 'lt',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Link URL',
-                'desc' => 'Enter URL of link',
-                'id' => $prefix . 'lh',
-                'type' => 'text_url'
-            ),
             array(
                 'name' => 'Background Image',
                 'desc' => '',

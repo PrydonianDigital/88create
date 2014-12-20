@@ -10,7 +10,7 @@
 			<section id="<?php global $post; echo $post->post_name; ?>"<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?> data-background="<?php global $post; $lh = get_post_meta( $post->ID, '_cmb_lh', true ); echo $bg; ?>"<?php endif; ?> <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?> data-background-color="#000"<?php endif; ?>>
 				<div class="roundelContainer">
 					<div class="leftRoundel halfEight title">
-						<span><h2>About</h2></span>
+						<span><h2>Engage</h2></span>
 					</div>
 					<div class="rightRoundel halfEight title">
 						<span><h2>Us</h2></span>
@@ -22,23 +22,18 @@
 			</section>			
 			<?php
 				$args = array (
-					'pagename' => 'About Content',
+					'post_type' => 'engage',
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
+					'post_parent' => 0
 				);
 				$services = new WP_Query( $args );
 				if ( $services->have_posts() ) {
 					while ( $services->have_posts() ) {
 						$services->the_post();
-			?>			
-			<section id="<?php global $post; echo $post->post_name; ?>"<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?> data-background="<?php global $post; $lh = get_post_meta( $post->ID, '_cmb_lh', true ); echo $bg; ?>"<?php endif; ?> <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?> data-background-color="#000"<?php endif; ?>>
-				<div class="roundelContainer">
-					<div class="nonRoundelContent">
-						<?php the_content(); ?>
-					</div>
-				</div>
-			</section>	
-			<?php			
+						
+						get_template_part( 'content', 'reveal' );
+						
 					}
 				} else {
 				// no posts found

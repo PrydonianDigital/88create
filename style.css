@@ -460,14 +460,16 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 }
 #form h2 {
 	padding-top: 40px;
+	padding-left: 5px;
 	position: absolute;
 	left: 20px;
 	font-size: 8rem;
 	font-style: italic;
 	width: 400px;
 	height: auto;
+	letter-spacing: 3px;
 	text-transform: uppercase;
-	font-family: "league-gothic-condensed", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	margin: 0;
 	word-spacing: 400px;
 	line-height: 1;
@@ -681,22 +683,24 @@ h2.aligncenter {
 }
 #filters li a {
 	padding: 5px 10px;
-	background: #938dc4;
+	background: #efefef;
 	display: block;
-	border: 1px solid #44439b;
+	border: 1px solid #000;
+	color: #000;
 	text-decoration: none;
-	color: #fff;
 	font-family: "league-gothic", sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
 	font-size: 1.2rem;
 	letter-spacing: 1px;
-	font-weight: 600;
+	font-weight: 300;
 	border-right-width: 0;
 	box-shadow: 0 0 4px rgba(255,255,255,0.2) inset;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 #filters li a:hover, #filters li a.selected {
-	background: #44439b;
+	background: #000;
 	color: #fff;
 	box-shadow: 0 0 4px rgba(0,0,0,0.8) inset;
 }
@@ -710,12 +714,20 @@ h2.aligncenter {
 .portfolio .thumbnail {
 	position: relative;
 }
+.portfolio .thumbnail img {
+	border-radius: 50%;
+	width: 100%;
+	height: auto;
+}
 #portfolio .portfolio h1, #portfolio .portfolio h2, #portfolio .portfolio h3, #portfolio .portfolio h4, #portfolio .portfolio h5, #portfolio .portfolio h6 {
 	margin: 0 0 10px 0;
 	text-align: center;
 	text-transform: uppercase;
 	font-family: "league-gothic", sans-serif;
 	font-weight: 300;
+}
+#portfolio {
+	padding-top: 25px;
 }
 .portfolio a {
 	color: #333;
@@ -734,6 +746,10 @@ h2.aligncenter {
 	margin: 0 !important;
 	overflow: hidden;
 }
+.portfolio.work {
+	margin-top: -25px !important;
+	padding: 5px !important;
+}
 .format-quote, .format-video {
 	background: #fff;
 }
@@ -749,6 +765,7 @@ h2.aligncenter {
 	left: 0;
 	z-index: 10;
 	width: 100%;
+	padding: 5px;
 }
 .portfolio .thumbnail img {
 	-webkit-transition: all 1s ease;
@@ -759,7 +776,7 @@ h2.aligncenter {
 	font-size: 5rem;
 	left: 50%;
 	top: 50%;
-	margin: -125px 0 0 -65px;
+	margin: -67px 0 0 -65px;
 	opacity: 0;	
 	border: 4px solid #000;
 	padding: 20px;
@@ -821,6 +838,21 @@ h2.aligncenter {
 	width: 100%;
 	height: 100%;
 }
+#centerPlus {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 6rem;
+	color: #000;
+	text-shadow: none;
+	width: 50px;
+	height: 50px;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	margin: -25px 0 0 -25px;
+}
 .halfEight {
 	width: 500px;
 	height: 500px;
@@ -833,7 +865,7 @@ h2.aligncenter {
 	-webkit-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
-.halfEight span {
+.halfEight span, #centerPlus span {
 	display: table-cell;
 	vertical-align: middle;
 	width: 500px;
@@ -843,8 +875,21 @@ h2.aligncenter {
 	-webkit-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
+#centerPlus span {
+	display: table-cell;
+	vertical-align: middle;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	border-radius: 50%;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+}
 .halfEight:nth-child(1) span {
 	font-size: 2.6rem;
+}
+.halfEight.title span h2 {
+	font-size: 6rem;
 }
 #skills h2, #skills p, #skills ul {
 	line-height: 1;
@@ -897,7 +942,21 @@ h2.aligncenter {
 .halfEight:nth-child(2) span {
 	font-size: 1.6rem;
 }
-
+.nonRoundelContent {
+	width: 600px;
+}
+#skills .nonRoundelContent p {
+	color: #000;
+	margin-bottom: 0.5em;
+	font-size: 1.6rem;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5) !important;
+}
+.dark #skills .nonRoundelContent p {
+	color: #fff;
+	margin-bottom: 0.5em;
+	font-size: 1.6rem;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5) !important;
+}
 .tweet , .padding {
 	padding: 20px;
 	overflow: hidden;

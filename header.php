@@ -31,9 +31,7 @@
      888888888          888888888             CCCCCCCCCCCCC rrrrrrr                eeeeeeeeeeeeee  aaaaaaaaaa  aaaa         ttttttttttt      eeeeeeeeeeeeee  
 -->
 <style>
-<?php
-$background_color = get_background_color();
-?>
+
 <?php if(is_page()) { ?>
 	body {
 		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
@@ -47,15 +45,24 @@ $background_color = get_background_color();
 	}
 <?php } elseif(is_archive()) { ?>
 	body {
-		background: #<?php echo $background_color; ?>;
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
 	}
+	<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
+	header {
+		border-color: #fff;
+	}
+	<?php else : ?>
+	header {
+		border-color: #000;
+	}
+	<?php endif; ?>
 <?php } elseif(is_home()) { ?>
 	body {
-		background: #<?php echo $background_color; ?>;
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
@@ -63,7 +70,7 @@ $background_color = get_background_color();
 	}
 <?php } elseif(is_single()) { ?>
 	body {
-		background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
@@ -72,7 +79,7 @@ $background_color = get_background_color();
 	body:before {
 	    content: "";
 	    position: fixed;
-	    background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+	    background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 	    -webkit-transform-origin: top left;
 	    -moz-transform-origin: top left;
 	    transform-origin: top left;
@@ -97,6 +104,13 @@ $background_color = get_background_color();
 		color: #efefef;
 		text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 	}
+	header {
+		border-color: #fff;
+	}
+<?php else : ?>
+	header {
+		border-color: #000;
+	}
 <?php endif; ?>
 <?php } else { ?>
 <?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
@@ -110,7 +124,7 @@ $background_color = get_background_color();
 	body:before {
 	    content: "";
 	    position: fixed;
-	    background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+	    background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 	    -webkit-transform-origin: top left;
 	    -moz-transform-origin: top left;
 	    transform-origin: top left;
