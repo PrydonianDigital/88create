@@ -1740,12 +1740,18 @@ var Reveal = (function(){
 			// Mark the current slide as present
 			slides[index].classList.add( 'present' );
 			slides[index].removeAttribute( 'hidden' );
-
+			
 			// If this slide has a state associated with it, add it
 			// onto the current state of the deck
+			var slideColour = slides[index].getAttribute( 'data-background-color' );
 			var slideState = slides[index].getAttribute( 'data-state' );
 			if( slideState ) {
 				state = state.concat( slideState.split( ' ' ) );
+			}
+			if( slideColour == '#000' ) {
+				document.body.setAttribute( 'class', 'dark' );
+			} else {
+				document.body.setAttribute( 'class', 'light' );
 			}
 
 		}

@@ -35,9 +35,8 @@
 $background_color = get_background_color();
 ?>
 <?php if(is_page()) { ?>
-<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?>
 	body {
-		background: #<?php echo $background_color; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
@@ -46,7 +45,6 @@ $background_color = get_background_color();
 	.mainTitle {
 		text-shadow: 1px 1px 1px #fff;
 	}
-<?php endif; ?>
 <?php } elseif(is_archive()) { ?>
 	body {
 		background: #<?php echo $background_color; ?>;
@@ -136,18 +134,42 @@ $background_color = get_background_color();
 <?php }  ?>
 <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	header h1 a, nav ul li a {
-		color: #fff;
+		color: #efefef;
 	}
 	header h1 a:hover {
 		color: #9992c4;
 	}
 	header {
-		border-color: #fff;
+		border-color: #efefef;
 	}
 	footer {
-		color: #fff;
+		color: #efefef;
 	}
 <?php endif; ?>
+	.dark header h1 a, nav ul li a {
+		color: #efefef;
+	}
+	.dark header h1 a:hover {
+		color: #9992c4;
+	}
+	.dark header {
+		border-color: #efefef;
+	}
+	.dark footer {
+		color: #efefef;
+	}
+	.light header h1 a, nav ul li a {
+		color: #000;
+	}
+	.light header h1 a:hover {
+		color: #453a8a;
+	}
+	.light header {
+		border-color: #000;
+	}
+	.light footer {
+		color: #000;
+	}
 </style>
 </head>
 <body <?php body_class(); ?>>
@@ -193,7 +215,7 @@ $detect = new Mobile_Detect;
 	?>
 	 <a id="close" href="#close"><i class="icon-cancel-circle"></i>
 </aside>
-<header>
+<header id="header">
 	<h1 class="fadeInLeftBig animated"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><i class="ee-create"></i></a></h1>
 	<?php if ( $detect->isMobile() ) { ?>
 		<a class="toggle fadeInRightBig animated"><i class="icon-menu"></i></a>
@@ -209,3 +231,4 @@ $detect = new Mobile_Detect;
 		<?php wp_nav_menu( array( 'theme_location' => 'eemobile', 'container' => false ) ); ?>
 	</nav>
 <?php } ?>
+<div id="bodyContent">

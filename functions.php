@@ -96,7 +96,7 @@ function workPage() {
 add_action('wp_enqueue_scripts', 'workPage');
 
 function skillsPage() {
-    if ( is_page(array('skills')) ) {
+    if ( is_page(array('create')) ) {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
@@ -514,6 +514,12 @@ function pageImage( $meta_boxes ) {
                 'desc' => '',
                 'id' => $prefix . 'bg',
                 'type' => 'file'
+            ),
+            array(
+            	'name' => 'Page Background Colour ',
+            	'id'   => $prefix . 'colour',
+            	'type' => 'colorpicker',
+            	'default'  => '#ffffff',
             ),
             array(
                 'name' => 'Dark Background',

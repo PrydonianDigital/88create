@@ -31,10 +31,6 @@ $j(function() {
 			$j('aside').hide();
 		});		
 	}
-	
-	if(element_exists('#homePageAbout')) {
-		$j('#leftroundel, #rightroundel, #plus').delay(2000).fadeOut(2000);
-	}
 
 	// timeline
 	var $timeline_block = $j('.cd-timeline-block');
@@ -59,7 +55,7 @@ $j(function() {
 		Reveal.initialize({
 			width: 1200,
 			touch: true,
-			loop: true,
+			loop: false,
 		});
 		$j('.roundel').on('click', function(e){
 			e.preventDefault();
@@ -254,3 +250,4 @@ function element_exists(id){
 	}
 	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
+;(function(e){e.fn.visible=function(t,n,r){var i=e(this).eq(0),s=i.get(0),o=e(window),u=o.scrollTop(),a=u+o.height(),f=o.scrollLeft(),l=f+o.width(),c=i.offset().top,h=c+i.height(),p=i.offset().left,d=p+i.width(),v=t===true?h:c,m=t===true?c:h,g=t===true?d:p,y=t===true?p:d,b=n===true?s.offsetWidth*s.offsetHeight:true,r=r?r:"both";if(r==="both")return!!b&&m<=a&&v>=u&&y<=l&&g>=f;else if(r==="vertical")return!!b&&m<=a&&v>=u;else if(r==="horizontal")return!!b&&y<=l&&g>=f}})(jQuery);
