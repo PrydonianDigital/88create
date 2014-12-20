@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div id="legend">
-	To navigate, use your keyboards left and right arrow keys, click the arrows at the bottom right or swipe on mobile devices <a id="close" href="#close"><i class="icon-cancel-circle"></i></a>
+	To navigate, use your keyboard left and right arrow keys, click the arrows at the bottom right or swipe on mobile devices <a id="close" href="#close"><i class="icon-cancel-circle"></i></a>
 </div>
 
 <div id="skills" class="fadeIn animated">	

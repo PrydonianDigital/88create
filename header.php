@@ -172,6 +172,13 @@
 	.dark footer {
 		color: #efefef;
 	}
+	.dark #legend {
+		background: #efefef;
+		color: #000;
+	}
+	.dark footer {
+		color: #000;
+	}
 	.light header h1 a, nav ul li a {
 		color: #000;
 	}
@@ -181,8 +188,14 @@
 	.light header {
 		border-color: #000;
 	}
+	.dark #close, .dark #close i {
+		color: #000 !important;
+	}
+	.light #legend {
+		
+	}
 	.light footer {
-		color: #000;
+		color: #fff;
 	}
 </style>
 </head>

@@ -1112,16 +1112,22 @@ h2.aligncenter {
 	z-index: 1101;
 	background: #111;
 	color: #fff;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 #close, #close i {
 	color: #fff;
 	line-height: 1;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 footer {
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	z-index: 1200;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 aside#cookies {
 	position: fixed;
@@ -1133,6 +1139,8 @@ aside#cookies {
 	color: #fff;
 	padding: 10px 0;
 	z-index: 3300;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 aside#cookies #close, aside.cookies #close i {
 	color: #fff;
