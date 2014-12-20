@@ -526,6 +526,18 @@ function pageImage( $meta_boxes ) {
                 'desc' => 'Enter a YouTube, Vimeo, Twitter, or Instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
                 'id' => $prefix . 'v',
                 'type' => 'oembed'
+            ),
+            array(
+	            'name' => 'Left Roundel',
+	            'desc' => '',
+	            'id' => $prefix . 'lr',
+	            'type' => 'text'
+            ),
+            array(
+	            'name' => 'Right Roundel',
+	            'desc' => '',
+	            'id' => $prefix . 'rr',
+	            'type' => 'text'
             )
         ),
     );

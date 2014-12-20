@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <div id="homePage" class="fadeIn animated">
-	<div id="create">
+	<div id="rightroundel">
 		CREATE
 	</div>
-	<div id="take">
+	<div id="leftroundel">
 		TAKE
 	</div>
 	<div id="plus">+</div>
