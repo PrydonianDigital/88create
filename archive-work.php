@@ -1,11 +1,29 @@
 <?php get_header(); ?>
 <?php
-$background_color = get_background_color();
-$background_image = get_background_image();
+$args = array (
+	'pagename' => 'Work',
+);
+$workPage = new WP_Query( $args );
+if ( $workPage->have_posts() ) {
+	while ( $workPage->have_posts() ) {
+		$workPage->the_post();
 ?>
-<style type="text/css" id="custom-css">
-.header { background: #<?php echo $background_color; ?> url("<?php header_image(); ?>") no-repeat center center; background-size: cover;}
+<style>
+	body {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
 </style>
+<?php
+	}
+} else {
+	// no posts found
+}
+wp_reset_postdata();
+?>
 <div class="grid">
 	<div class="col-1-1">
 		<div id="filterlist"></div>
@@ -37,12 +55,12 @@ $background_image = get_background_image();
 		if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); 
 		$terms = wp_get_post_terms( $work->post->ID, array( 'type' ) );
 	?>
-	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'work' ); $url = $thumb['0']; ?>
+	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'portfolio' ); $url = $thumb['0']; ?>
 	
-		<div <?php post_class('col-1-4 portfolio'); ?> data-filters="<?php foreach ( $terms as $term ) : ?><?php echo $term->slug; ?><?php endforeach; ?>">
+		<div <?php post_class('col-1-2 portfolio'); ?> data-filters="<?php foreach ( $terms as $term ) : ?><?php echo $term->slug; ?><?php endforeach; ?>">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
 				<div class="thumbnail">
-					<?php the_post_thumbnail('portfolio', array( 'class' => 'lazy' )); ?><i class="icon-zoomin"></i>
+					<img class="lazy" data-original="<?php echo $url; ?>"><i class="icon-zoomin"></i>
 				</div>
 			</a>
 		</div>

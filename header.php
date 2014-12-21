@@ -62,7 +62,7 @@
 	<?php endif; ?>
 <?php } elseif(is_home()) { ?>
 	body {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;

@@ -726,7 +726,10 @@ h2.aligncenter {
 	font-family: "league-gothic", sans-serif;
 	font-weight: 300;
 }
-#portfolio {
+.post-type-archive-case_studies #portfolio {
+	padding-top: 55px;
+}
+.post-type-archive-work #portfolio {
 	padding-top: 25px;
 }
 .portfolio a {
@@ -746,7 +749,7 @@ h2.aligncenter {
 	margin: 0 !important;
 	overflow: hidden;
 }
-.portfolio.work {
+.portfolio.work, .portfolio.case_studies {
 	margin-top: -25px !important;
 	padding: 5px !important;
 }

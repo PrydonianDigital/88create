@@ -2,6 +2,7 @@
 
 <div class="grid">
 	<div class="col-1-1">
+		<div id="filterlist"></div>
 		<ul id="filters" class="aligncenter">
 		    <li><a href="#" data-filter="*" class="selected">Everything</a></li>
 			<?php 
@@ -9,58 +10,46 @@
 				$count = count($terms);
 				if ( $count > 0 ) {
 					foreach ( $terms as $term ) {
-						echo "<li><a href='#" . $term->name . "' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
+						echo "<li><a href='#' data-show='".$term->slug."' data-filter='.".$term->slug."'>" . $term->name . "</a></li>\n";
 					}
 				} 
 			?>
 		</ul>
 	</div>
 </div>
-dfgsg
+
 <div class="grid" id="portfolio">
 	
 	<?php 
-		global $wp_query;
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-		$work = array(
-			'post_type' => 'portfolio',
-			'posts_per_page' => '4',
-			'paged' => $paged,
-			'caller_get_posts' => 1
-		);
-		$query = new WP_Query( $work );
+		$args = array(
+			'post_type' => 'work',
+			'posts_per_page' => -1,
+			'paged' => $paged
+		); 
+		$work = new WP_Query($args);
+		if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); 
+		$terms = wp_get_post_terms( $work->post->ID, array( 'type' ) );
 	?>
-	
-	<?php while ($query->have_posts()) : $query->the_post(); ?>
 	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'portfolio' ); $url = $thumb['0']; ?>
-	<?php if ( 'video' == get_post_format() ) { ?>
-	<div <?php post_class('col-1-3 portfolio'); ?>>
-		<?php $video = get_post_meta( $post->ID, '_cmb_v', true ); echo wp_oembed_get( $video ); ?>
-		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-	</div>
-	<?php } elseif ( 'quote' == get_post_format() ) { ?>
-	<div <?php post_class('col-1-3 portfolio'); ?>>
-		<blockquote><?php the_content(); ?></blockquote>
-	</div>
-	<?php } else { ?>
-	<div <?php post_class('col-1-3 portfolio'); ?>>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<div class="thumbnail">
-				<?php the_post_thumbnail('portfolio'); ?>
-			</div>
-			<h2><?php the_title(); ?></h2>
-		</a>
-	</div>
-	<?php } ?>
+	
+		<div <?php post_class('col-1-4 portfolio'); ?> data-filters="<?php foreach ( $terms as $term ) : ?><?php echo $term->slug; ?><?php endforeach; ?>">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
+				<div class="thumbnail">
+					<img class="lazy" data-original="<?php echo $url; ?>"><i class="icon-zoomin"></i>
+				</div>
+			</a>
+		</div>
 	
 	<?php endwhile; ?>
-	<div class="navigation">
-		<div class="next">
-			<?php next_posts_link('More &raquo;') ?>
-			<?php previous_posts_link('&laquo; Previous') ?>
-		</div>
-	</div>
-	
+
 </div>
+
+<div class="navigation">
+	<div class="alignleft"><?php previous_posts_link('&laquo; Previous Entries') ?></div>
+	<div class="alignright"><?php next_posts_link('Next Entries &raquo;','') ?></div>
+</div>
+
+<?php endif; ?>
 	
 <?php get_footer(); ?>

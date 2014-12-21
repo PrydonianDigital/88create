@@ -11,7 +11,7 @@ function ee_init()  {
 	add_image_size( 'big_case',  700, 700, true );
 	add_image_size( 'case', 510, 510, true );
 	add_image_size( 'timeline', 250, 150, true );
-	add_image_size( 'portfolio', 320, 320, true );
+	add_image_size( 'portfolio', 640, 640, true );
 	add_image_size( 'person', 320, 420, true );
 	add_image_size( 'persondesktop', 365, 1000, true );
 	add_editor_style( 'editor-style.css' );
@@ -155,7 +155,7 @@ function engage() {
 		'publicly_queryable'  => true,
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'engage', $args );
+	register_post_type( 'engager', $args );
 }
 // Hook into the 'init' action
 add_action( 'init', 'engage', 0 );
@@ -191,10 +191,10 @@ function portfolio() {
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
 		'can_export'          => true,
-		'has_archive'         => true,
+		'has_archive'         => 'work',
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'rewrite'			  => array( 'slug' => 'work' ),
+		'rewrite'			  => array('slug' => 'work', 'with_front' => true),
 		'capability_type'     => 'page',
 	);
 	register_post_type( 'work', $args );
@@ -731,7 +731,7 @@ function skillset( $meta_boxes ) {
     $meta_boxes['video_metabox'] = array(
         'id' => 'extras',
         'title' => 'Extras',
-        'pages' => array('skill', 'engage'), // post type
+        'pages' => array('skill', 'engager'), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left

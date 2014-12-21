@@ -22,7 +22,7 @@
 			</section>			
 			<?php
 				$args = array (
-					'post_type' => 'engage',
+					'post_type' => 'engager',
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
 					'post_parent' => 0

@@ -1,13 +1,17 @@
 <?php get_header(); ?>
-
 <?php
 $background_color = get_background_color();
 $background_image = get_background_image();
 ?>
-<style type="text/css" id="custom-css">
-.header { background: #<?php echo $background_color; ?> url("<?php header_image(); ?>") no-repeat center center; background-size: cover;}
+<style>
+	body {
+		background: #<?php echo $background_color; ?> url(<?php echo $background_image; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
 </style>
-
 <div class="grid" id="portfolio">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
