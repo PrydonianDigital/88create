@@ -719,6 +719,11 @@ h2.aligncenter {
 	width: 100%;
 	height: auto;
 }
+.blog .portfolio .thumbnail img {
+	border-radius: 0;
+	width: 100%;
+	height: auto;
+}
 #portfolio .portfolio h1, #portfolio .portfolio h2, #portfolio .portfolio h3, #portfolio .portfolio h4, #portfolio .portfolio h5, #portfolio .portfolio h6 {
 	margin: 0 0 10px 0;
 	text-align: center;
