@@ -40,6 +40,20 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
+<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
+	.mainTitle {
+		color: #efefef;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+	}
+	header {
+		border-color: #fff;
+	}
+<?php else : ?>
+	header {
+		border-color: #000;
+	}
+<?php endif; ?>
+
 	.mainTitle {
 		text-shadow: 1px 1px 1px #fff;
 	}

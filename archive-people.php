@@ -1,13 +1,31 @@
 <?php get_header(); ?>
+
+<?php
+$args = array (
+	'pagename' => 'Work',
+);
+$workPage = new WP_Query( $args );
+if ( $workPage->have_posts() ) {
+	while ( $workPage->have_posts() ) {
+		$workPage->the_post();
+?>
 <style>
 	body {
-		background-image: url(<?php header_image(); ?>);
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
-	}	
+	}
 </style>
+<?php
+	}
+} else {
+	// no posts found
+}
+wp_reset_postdata();
+?>
+
 <?php
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;	
