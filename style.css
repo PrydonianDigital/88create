@@ -776,6 +776,9 @@ h2.aligncenter {
 	width: 100%;
 	padding: 5px;
 }
+.blog .portfolio .thumbnail {
+	padding: 0;
+}
 .portfolio .thumbnail img {
 	-webkit-transition: all 1s ease;
 		transition: all 1s ease;
