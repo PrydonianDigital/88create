@@ -14,8 +14,16 @@ $background_image = get_background_image();
 </style>
 <div class="grid" id="portfolio">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	
+	<?php 
+	$args = array (
+		'post_type' => 'post',
+		'posts_per_page' => '-1',
+	);
+	$blog = new WP_Query( $args );
+	if ( $blog->have_posts() ) {
+		while ( $blog->have_posts() ) {
+			$blog->the_post();
+	?>
 	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'portfolio' ); $url = $thumb['0']; ?>
 	
 		<?php if(in_category('twitter')) { ?>
@@ -50,14 +58,12 @@ $background_image = get_background_image();
 		
 		<?php } ?>
 	
-	<?php endwhile; ?>
-	
-	<div class="navigation">
-		<div class="alignleft"><?php previous_posts_link('&laquo; Previous Entries') ?></div>
-		<div class="alignright"><?php next_posts_link('Next Entries &raquo;','') ?></div>
-	</div>
-	
-	<?php endif; ?>
+	<?php 
+			}
+		} else {
+		}
+	wp_reset_postdata();
+	?>
 
 </div>
 

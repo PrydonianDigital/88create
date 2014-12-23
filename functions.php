@@ -107,7 +107,7 @@ add_action('wp_enqueue_scripts', 'skillsPage');
 function blogPage() {
     if ( is_home() ) {
         wp_enqueue_script('isotope');
-        wp_enqueue_script('infinite');
+        wp_enqueue_script('lazyload');
     } 
 }
 add_action('wp_enqueue_scripts', 'blogPage');
