@@ -748,6 +748,7 @@ h2.aligncenter {
 	padding: 0 !important;
 	margin: 0 !important;
 	overflow: hidden;
+	position: relative;
 }
 .portfolio.work, .portfolio.case_studies {
 	margin-top: -25px !important;
