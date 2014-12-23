@@ -1003,7 +1003,7 @@ h2.aligncenter {
 }
 .person h1, .person h2, .person h3, .person h4, .person h5, .person h6, #service h1, #service h2, #service h3, #service h4, #service h5, #service h6 {
 	margin-bottom: 12px;
-	font-family: '88ROb', sans-serif;
+	font-family: 'league-gothic', sans-serif;
 	text-transform: uppercase;
 }
 .person .padding {
@@ -1041,7 +1041,7 @@ h2.aligncenter {
 	line-height: 1;
 }
 .single-work .col-1-1 h2 {
-	font-family: '88Rob', sans-serif;
+	font-family: 'league-gothic-condensed', sans-serif;
 	text-transform: uppercase;
 	line-height: 1;
 }
@@ -1065,7 +1065,7 @@ h2.aligncenter {
 }
 .single-case_studies h2, .single-case_studies h3, .single-case_studies h4, .single-case_studies h5, .single-case_studies h6 {
 	margin: 0;
-	font-family: '88Rob', sans-serif;
+	font-family: 'league-gothic-condensed', sans-serif;
 	text-transform: uppercase;
 }
 .single-case_studies .col-1-1 {
