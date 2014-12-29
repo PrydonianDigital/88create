@@ -64,7 +64,7 @@ $detect = new Mobile_Detect;
 	
 	</div>
 
-<dialog id="contact">
+<div id="contact">
 <a id="close" href="#close"><i class="icon-cancel-circle"></i></a>	<?php
 		$args = array (
 			'pagename' => 'Contact',
@@ -84,6 +84,6 @@ $detect = new Mobile_Detect;
 		}
 		wp_reset_postdata();
 	?>
-</dialog>
+</div>
 	
 <?php get_footer(); ?>

@@ -52,13 +52,13 @@ $j(function() {
 	
 	// people 
 	if(element_exists('#people')) {
-		$j('.person').on('click', 'a', function(e){
+		$j('.person a').on('click', function(e){
 			e.preventDefault();
-			openDialog();
+			$j('#contact').show();
 		});
 		$j('#contact #close').on('click', function(e){
 			e.preventDefault();
-			closeDialog();
+			$j('#contact').hide();
 		});
 	}
 	
@@ -238,14 +238,6 @@ function element_exists(id){
 		return true;
 	}
 	return false;
-}
-
-function openDialog() {
-	$j('#contact').show();
-}
-
-function closeDialog() {
-	$j('#contact').hide();
 }
 
 (function($){
