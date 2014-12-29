@@ -12,7 +12,7 @@ function ee_init()  {
 	add_image_size( 'case', 510, 510, true );
 	add_image_size( 'timeline', 250, 150, true );
 	add_image_size( 'portfolio', 640, 640, true );
-	add_image_size( 'person', 320, 420, true );
+	add_image_size( 'person', 320, 320, true );
 	add_image_size( 'persondesktop', 365, 1000, true );
 	add_editor_style( 'editor-style.css' );
 	$background_args = array(

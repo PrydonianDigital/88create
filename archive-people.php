@@ -42,19 +42,22 @@ $detect = new Mobile_Detect;
 	<div id="people">
 		
 		<?php if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); ?>	
-		<div class="col-1-7 person">		
-			<?php if ( $detect->isMobile() ) { ?>
-			<?php the_post_thumbnail('person'); ?>
-			<?php } else { ?>
-				<?php the_post_thumbnail('persondesktop'); ?>
-			<?php } ?>
-			<div class="padding">
-				<h2><?php the_title(); ?></h2>
-				<h5><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h5>
-				<?php the_content(); ?>
+		<div id="hcard-<?php global $post; echo $post->post_name; ?>" class="vcard person">
+			<div class="personContainer">
+				<div class="personRoundel">
+					<?php the_post_thumbnail('person'); ?>
+				</div>
+				<div class="detailRoundel">
+					<h2 class="fn"><?php the_title(); ?></h2>
+					<h5><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h5>
+					<div class="org">88Create</div>
+					<div class="adr">
+						<span class="locality">London</span>, 
+						<span class="postcode">EC1V 7DB</span>
+					</div>
+				</div>
 			</div>
 		</div>
-		
 		<?php endwhile; ?>
 	
 		<?php endif; ?>

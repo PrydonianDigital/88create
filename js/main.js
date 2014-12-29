@@ -31,7 +31,25 @@ $j(function() {
 			$j('aside').hide();
 		});		
 	}
-
+	
+	if($j(window).width() >= 568) {
+		var peopleNumber = $j('.person').length,
+			peopleWidth = $j('.person').width();
+		$j('#people').width(peopleNumber * peopleWidth + peopleWidth);
+	} else {
+		$j('#people').width('100%');
+	}
+	$j(window).resize(function() {
+		if($j(window).width() >= 568) {
+			var peopleNumber = $j('.person').length,
+				peopleWidth = $j('.person').width();
+			$j('#people').width(peopleNumber * peopleWidth + peopleWidth);
+		}
+		else {
+			$j('#people').width('100%');
+		}
+	}).resize();
+	
 	// timeline
 	var $timeline_block = $j('.cd-timeline-block');
 	//hide timeline blocks which are outside the viewport
