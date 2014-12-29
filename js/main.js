@@ -32,24 +32,6 @@ $j(function() {
 		});		
 	}
 	
-	if($j(window).width() >= 568) {
-		var peopleNumber = $j('.person').length,
-			peopleWidth = $j('.person').width();
-		$j('#people').width(peopleNumber * peopleWidth + peopleWidth);
-	} else {
-		$j('#people').width('100%');
-	}
-	$j(window).resize(function() {
-		if($j(window).width() >= 568) {
-			var peopleNumber = $j('.person').length,
-				peopleWidth = $j('.person').width();
-			$j('#people').width(peopleNumber * peopleWidth + peopleWidth);
-		}
-		else {
-			$j('#people').width('100%');
-		}
-	}).resize();
-	
 	// timeline
 	var $timeline_block = $j('.cd-timeline-block');
 	//hide timeline blocks which are outside the viewport
@@ -67,6 +49,18 @@ $j(function() {
 			}
 		});
 	});
+	
+	// people 
+	if(element_exists('#people')) {
+		$j('.person').on('click', 'a', function(e){
+			e.preventDefault();
+			openDialog();
+		});
+		$j('#contact #close').on('click', function(e){
+			e.preventDefault();
+			closeDialog();
+		});
+	}
 	
 	// skills
 	if(element_exists('.reveal')) {
@@ -244,6 +238,14 @@ function element_exists(id){
 		return true;
 	}
 	return false;
+}
+
+function openDialog() {
+	$j('#contact').show();
+}
+
+function closeDialog() {
+	$j('#contact').hide();
 }
 
 (function($){
