@@ -34,7 +34,11 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<div class="col-1-1">
-		<?php the_content(); ?>	
+		<div class="grid">
+			<div class="col-1-1">
+				<?php the_content(); ?>	
+			</div>
+		</div>
 	</div>
 	
 	<?php endwhile; ?>
