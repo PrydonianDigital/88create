@@ -904,7 +904,7 @@ function add_menu_icons_styles(){
 	#adminmenu #menu-posts-skill div.wp-menu-image:before, #dashboard_right_now .skill-count a:before {
 		content: "\f313";
 	}
-	#adminmenu #menu-posts-engager div.wp-menu-image:before, #dashboard_right_now .skill-engager a:before {
+	#adminmenu #menu-posts-engager div.wp-menu-image:before, #dashboard_right_now .engager-count a:before {
 		content: "\f111";
 	}
 	</style>';
