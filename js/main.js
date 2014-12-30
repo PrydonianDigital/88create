@@ -68,6 +68,7 @@ $j(function() {
 			width: 1200,
 			touch: true,
 			loop: false,
+			backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
 		});
 		$j('.roundel').on('click', function(e){
 			e.preventDefault();
