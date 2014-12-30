@@ -16,6 +16,13 @@ if ( $workPage->have_posts() ) {
 		background-position: center top;
 		background-attachment: fixed;
 	}
+	header {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
 </style>
 <?php
 	}

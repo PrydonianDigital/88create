@@ -5,7 +5,15 @@ $background_image = get_background_image();
 ?>
 <style>
 	body {
-		background: #<?php echo $background_color; ?> url(<?php echo $background_image; ?>);
+		background: #<?php echo $background_color; ?>;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+	}
+
+	header {
+		background: #<?php echo $background_color; ?>;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;

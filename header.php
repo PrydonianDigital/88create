@@ -56,7 +56,6 @@
 		border-color: #000;
 	}
 <?php endif; ?>
-
 	.mainTitle {
 		text-shadow: 1px 1px 1px #fff;
 	}
@@ -67,6 +66,10 @@
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
+	}
+	header {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
+		
 	}
 	<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	header {
@@ -85,6 +88,14 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
+	header {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+		
+	}
 <?php } elseif(is_single()) { ?>
 	body {
 		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
@@ -92,6 +103,14 @@
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
+	}
+	header {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+		
 	}
 	body:before {
 	    content: "";
@@ -137,6 +156,14 @@
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
+	}
+	header {
+		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-attachment: fixed;
+		
 	}
 	body:before {
 	    content: "";
@@ -194,7 +221,8 @@
 		color: #000;
 	}
 	.dark footer {
-		color: #000;
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 	}
 	.light header h1 a, nav ul li a {
 		color: #000;
@@ -213,6 +241,7 @@
 	}
 	.light footer {
 		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 	}
 </style>
 </head>

@@ -335,7 +335,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 #bodyContent {
 	width: auto;
 	height: calc(100% - 158px);
-	margin-top: 158px;
+	padding-top: 158px;
 }
 #homePage, #homePageAbout {
 	position: absolute;
