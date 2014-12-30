@@ -40,13 +40,6 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
-	header {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-	}
 <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	.mainTitle {
 		color: #efefef;
@@ -76,7 +69,6 @@
 	}
 	header {
 		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
-		
 	}
 	<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	header {
@@ -95,14 +87,6 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
-	header {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-		
-	}
 <?php } elseif(is_single()) { ?>
 	body {
 		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
@@ -110,14 +94,6 @@
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-attachment: fixed;
-	}
-	header {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-		
 	}
 	body:before {
 	    content: "";
@@ -136,29 +112,6 @@
 	    z-index: -1;
 	    width: 100%;
 	    height: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-		filter:url(#blur-effect);
-	}
-	header:before {
-	    content: "";
-	    position: fixed;
-	    background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-	    -webkit-transform-origin: top left;
-	    -moz-transform-origin: top left;
-	    transform-origin: top left;
-	    -webkit-filter: blur(10px); 
-	    -moz-filter: blur(10px); 
-	    -o-filter: blur(10px); 
-	    -ms-filter: blur(10px); 
-	    filter: blur(10px);
-	    left: 0;
-	    top: 0;
-	    z-index: -1;
-	    width: 100%;
-	    height: 158px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
@@ -187,14 +140,6 @@
 		background-position: center top;
 		background-attachment: fixed;
 	}
-	header {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-		
-	}
 	body:before {
 	    content: "";
 	    position: fixed;
@@ -212,29 +157,6 @@
 	    z-index: -1;
 	    width: 100%;
 	    height: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center top;
-		background-attachment: fixed;
-		filter:url(#blur-effect);
-	}
-	header:before {
-	    content: "";
-	    position: fixed;
-	    background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?> url(<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>);
-	    -webkit-transform-origin: top left;
-	    -moz-transform-origin: top left;
-	    transform-origin: top left;
-	    -webkit-filter: blur(10px); 
-	    -moz-filter: blur(10px); 
-	    -o-filter: blur(10px); 
-	    -ms-filter: blur(10px); 
-	    filter: blur(10px);
-	    left: 0;
-	    top: 0;
-	    z-index: -1;
-	    width: 100%;
-	    height: 158px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center top;
