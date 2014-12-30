@@ -48,6 +48,9 @@
 	header {
 		border-color: #fff;
 	}
+	.grid [class*='col-'] {
+		color: #fff;
+	}
 <?php else : ?>
 	header {
 		border-color: #000;

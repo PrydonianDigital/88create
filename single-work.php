@@ -2,7 +2,7 @@
 
 <div class="grid large">
 	
-	<a href="/work/" id="closeWork" title="Back to Work"><i class="icon-cancel-circle"></i></a>
+	<a id="closeWork" title="Back to Work" onclick="javascript:window.history.go(-1);"><i class="icon-cancel-circle"></i></a>
 	
 	<?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); if($title != '') : ?><h2 class="mainTitle"><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h2><?php endif; ?>
 

@@ -58,7 +58,7 @@ wp_reset_postdata();
 	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'portfolio' ); $url = $thumb['0']; ?>
 	
 		<div <?php post_class('col-1-2 portfolio'); ?> data-filters="<?php foreach ( $terms as $term ) : ?><?php echo $term->slug; ?><?php endforeach; ?>">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="project">
+			<a href="<?php global $post; echo $post->post_name; ?>" title="<?php the_title(); ?>" class="project">
 				<div class="thumbnail">
 					<img class="lazy" data-original="<?php echo $url; ?>"><i class="icon-zoomin"></i>
 				</div>

@@ -1499,8 +1499,7 @@ table > tfoot > tr.danger > th {
 	.grid {
 		width: 100%;
 		margin: 0 auto;
-	}
- 
+	} 
 	header {
 		overflow: hidden;
 	}
@@ -1592,7 +1591,20 @@ table > tfoot > tr.danger > th {
 		width: 100%;
 		max-width: 100%;
 		height: auto;
-		margin-top: 0;
+		margin-top: -60px;
+	}
+	.person h2 {
+		font-size: 1.4rem;
+		font-weight: 300;
+	}
+	.person h5 {
+		font-size: 1rem;
+		font-weight: 300;
+	}
+	#closeWork {
+		z-index: 1200;
+		top: 20px;
+		right: 20px;
 	}
 }
 @media only screen and (min-width : 320px) and (max-width : 568px) {
@@ -1712,6 +1724,12 @@ table > tfoot > tr.danger > th {
 	.mobileRollover h3 {
 		font-family: "league-gothic", sans-serif;
 		text-transform: uppercase;
+	}
+	.person img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		margin-top: 0;
 	}
 }
 

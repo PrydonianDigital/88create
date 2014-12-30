@@ -44,7 +44,7 @@ $detect = new Mobile_Detect;
 		<?php if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); ?>	
 		<div id="hcard-<?php global $post; echo $post->post_name; ?>" class="vcard person col-1-7">
 			<a href="#">
-			<?php if ( $detect->isMobile() ) { ?>
+			<?php if ( $detect->isMobile() && !$detect->isTablet() ) { ?>
 				<?php the_post_thumbnail('person'); ?>
 			<?php } else { ?>
 					<?php the_post_thumbnail('persondesktop'); ?>
