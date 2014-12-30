@@ -1013,11 +1013,18 @@ h2.aligncenter {
 	height: auto;
 	margin-top: -10%;
 }
-.person h1, .person h2, .person h3, .person h4, .person h5, .person h6, #service h1, #service h2, #service h3, #service h4, #service h5, #service h6 {
+.person h1, .person h2 {
+	margin-bottom: 12px;
+	font-family: 'league-gothic', sans-serif;
+	padding: 0 5px;
+	font-weight: 300;
+}
+.person h3, .person h4, .person h5, .person h6, #service h1, #service h2, #service h3, #service h4, #service h5, #service h6 {
 	margin-bottom: 12px;
 	font-family: 'league-gothic', sans-serif;
 	text-transform: uppercase;
 	padding: 0 5px;
+	font-weight: 300;
 }
 .person .padding {
 	min-height: 500px;
