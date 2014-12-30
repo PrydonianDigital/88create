@@ -567,12 +567,6 @@ function pageImage( $meta_boxes ) {
                 'type' => 'checkbox'
             ),
             array(
-                'name' => 'Video',
-                'desc' => 'Enter a YouTube, Vimeo, Twitter, or Instagram URL. Supports services listed at <a href="http://codex.wordpress.org/Embeds">http://codex.wordpress.org/Embeds</a>.',
-                'id' => $prefix . 'v',
-                'type' => 'oembed'
-            ),
-            array(
 	            'name' => 'Left Roundel',
 	            'desc' => '',
 	            'id' => $prefix . 'lr',
