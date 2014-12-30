@@ -904,6 +904,9 @@ function add_menu_icons_styles(){
 	#adminmenu #menu-posts-skill div.wp-menu-image:before, #dashboard_right_now .skill-count a:before {
 		content: "\f313";
 	}
+	#adminmenu #menu-posts-engage div.wp-menu-image:before, #dashboard_right_now .skill-engage a:before {
+		content: "\f111";
+	}
 	</style>';
 }
 add_action( 'admin_head', 'add_menu_icons_styles' );
