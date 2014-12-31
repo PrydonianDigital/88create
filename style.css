@@ -2368,6 +2368,9 @@ table > tfoot > tr.danger > th {
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	z-index: 3100;
 }
+#contact label, #contact h2 {
+	font-weight: 300;
+}
 #contact #close {
 	top: 5px;
 	right: 5px;
