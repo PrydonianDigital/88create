@@ -140,7 +140,7 @@ function engage() {
 	);
 	$args = array(
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( 'title', 'editor', 'page-attributes' ),
 		'taxonomies'          => array( 'category', 'post_tag' ),
 		'hierarchical'        => false,
 		'public'              => true,

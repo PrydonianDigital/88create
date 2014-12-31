@@ -40,6 +40,7 @@ wp_reset_postdata();
 		$args = array(
 			'post_type' => 'case_studies',
 			'posts_per_page' => -1,
+			'orderby' => 'menu_order',
 			'paged' => $paged
 		); 
 		$work = new WP_Query($args);
