@@ -624,36 +624,36 @@ function case_details( $meta_boxes ) {
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
         'fields' => array(
-            array(
-                'name' => 'Quote',
-                'desc' => '',
-                'id' => $prefix . 'quote',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Quote Author',
-                'desc' => '',
-                'id' => $prefix . 'author',
-                'type' => 'text'
-            ),
-            array(
-                'name' => 'Key Facts',
-                'desc' => '',
-                'id' => $prefix . 'key',
-                'type' => 'wysiwyg'
-            ),
-			array(
-			    'name' => 'Key Facts Colour Picker',
-			    'id'   => $prefix . 'keycolour',
-			    'type' => 'colorpicker',
-			    'default'  => '#e6c680'
-			),
-            array(
-                'name' => 'Solution',
-                'desc' => '',
-                'id' => $prefix . 'solution',
-                'type' => 'wysiwyg'
-            ),
+//            array(
+//                'name' => 'Quote',
+//                'desc' => '',
+//                'id' => $prefix . 'quote',
+//                'type' => 'text'
+//            ),
+//            array(
+//                'name' => 'Quote Author',
+//                'desc' => '',
+//                'id' => $prefix . 'author',
+//                'type' => 'text'
+//            ),
+//            array(
+//                'name' => 'Key Facts',
+//                'desc' => '',
+//                'id' => $prefix . 'key',
+//                'type' => 'wysiwyg'
+//            ),
+//			array(
+//			    'name' => 'Key Facts Colour Picker',
+//			    'id'   => $prefix . 'keycolour',
+//			    'type' => 'colorpicker',
+//			    'default'  => '#e6c680'
+//			),
+//            array(
+//                'name' => 'Solution',
+//                'desc' => '',
+//                'id' => $prefix . 'solution',
+//                'type' => 'wysiwyg'
+//            ),
             array(
                 'name' => 'Background Image',
                 'desc' => '',

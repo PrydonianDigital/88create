@@ -2,7 +2,7 @@
 
 <?php
 $args = array (
-	'pagename' => 'Work',
+	'pagename' => 'Case Studies',
 );
 $workPage = new WP_Query( $args );
 if ( $workPage->have_posts() ) {
