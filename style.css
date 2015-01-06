@@ -910,6 +910,14 @@ h2.aligncenter {
 .halfEight.title span h2 {
 	font-size: 6rem;
 }
+.halfEight.title span h3 {
+	font-family: "league-gothic", sans-serif;
+	font-size: 4rem;
+	word-spacing: 200px;
+	color: #111;
+	font-weight: 300;
+	text-shadow: none !important;
+}
 #skills h2, #skills p, #skills ul {
 	line-height: 1;
 	color: #000;
