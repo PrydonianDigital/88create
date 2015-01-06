@@ -104,6 +104,15 @@ function skillsPage() {
 }
 add_action('wp_enqueue_scripts', 'skillsPage');
 
+function caseArchive() {
+    if ( is_post_type_archive('case_studies') ) {
+        wp_enqueue_style( 'reveal' );
+        wp_enqueue_style( 'default' );
+        wp_enqueue_script('reveal');
+    } 
+}
+add_action('wp_enqueue_scripts', 'caseArchive');
+
 function blogPage() {
     if ( is_home() ) {
         wp_enqueue_script('isotope');
@@ -426,17 +435,17 @@ add_action( 'init', 'case_tax', 0 );
 // Register Skills Post Type
 function skills() {
 	$labels = array(
-		'name'                => _x( 'Skills', 'Post Type General Name', 'ee' ),
-		'singular_name'       => _x( 'Skill', 'Post Type Singular Name', 'ee' ),
-		'menu_name'           => __( 'Skills', 'ee' ),
-		'parent_item_colon'   => __( 'Parent Skill:', 'ee' ),
-		'all_items'           => __( 'All Skills', 'ee' ),
-		'view_item'           => __( 'View Skill', 'ee' ),
-		'add_new_item'        => __( 'Add New Skill', 'ee' ),
+		'name'                => _x( 'Create', 'Post Type General Name', 'ee' ),
+		'singular_name'       => _x( 'Create', 'Post Type Singular Name', 'ee' ),
+		'menu_name'           => __( 'Create', 'ee' ),
+		'parent_item_colon'   => __( 'Parent Create:', 'ee' ),
+		'all_items'           => __( 'All Create', 'ee' ),
+		'view_item'           => __( 'View Create', 'ee' ),
+		'add_new_item'        => __( 'Add New Create', 'ee' ),
 		'add_new'             => __( 'Add New', 'ee' ),
-		'edit_item'           => __( 'Edit Skill', 'ee' ),
-		'update_item'         => __( 'Update Skill', 'ee' ),
-		'search_items'        => __( 'Search Skill', 'ee' ),
+		'edit_item'           => __( 'Edit Create', 'ee' ),
+		'update_item'         => __( 'Update Create', 'ee' ),
+		'search_items'        => __( 'Search Create', 'ee' ),
 		'not_found'           => __( 'Not found', 'ee' ),
 		'not_found_in_trash'  => __( 'Not found in Trash', 'ee' ),
 	);
@@ -710,21 +719,21 @@ function case_details( $meta_boxes ) {
 //                'type' => 'text'
 //            ),
 //            array(
-//                'name' => 'Key Facts',
+//                'name' => 'Left Roundel',
 //                'desc' => '',
-//                'id' => $prefix . 'key',
-//                'type' => 'wysiwyg'
+//                'id' => $prefix . 'cs_lr',
+//                'type' => 'text'
 //            ),
 //			array(
-//			    'name' => 'Key Facts Colour Picker',
+//			    'name' => 'Left Roundel',
 //			    'id'   => $prefix . 'keycolour',
 //			    'type' => 'colorpicker',
 //			    'default'  => '#e6c680'
 //			),
 //            array(
-//                'name' => 'Solution',
+//                'name' => 'Right Roudnel',
 //                'desc' => '',
-//                'id' => $prefix . 'solution',
+//                'id' => $prefix . 'cs_rr',
 //                'type' => 'wysiwyg'
 //            ),
             array(
@@ -732,12 +741,6 @@ function case_details( $meta_boxes ) {
                 'desc' => '',
                 'id' => $prefix . 'bg',
                 'type' => 'file'
-            ),
-            array(
-            	'name' => 'Page Background Colour ',
-            	'id'   => $prefix . 'colour',
-            	'type' => 'colorpicker',
-            	'default'  => '#ffffff',
             ),
             array(
                 'name' => 'Dark Background',

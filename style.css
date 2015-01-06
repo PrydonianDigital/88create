@@ -253,6 +253,23 @@ body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li 
 	color: #fff;
 	background: #000;	
 }
+nav#desktop li.menu-item-8728 a{
+	text-indent: -999em;
+	background: #000 url(img/looplogo.png) no-repeat top center;
+}
+nav#desktop li.menu-item-8728 a:hover {
+	text-indent: -999em;
+	background: #efefef url(img/looplogo.png) no-repeat bottom center;
+}
+nav#mobile li.menu-item-8729 a {
+	text-indent: -999em;
+	background: #000 url(img/looplogo.png) no-repeat top left;
+}
+nav#mobile li.menu-item-8729 a:hover, nav#mobile li.menu-item-8729 a:active {
+	text-indent: -999em;
+	background: #efefef url(img/looplogo.png) no-repeat bottom left;
+}
+
 .toggle {
 	background: #000;
 	color: #fff;
@@ -303,12 +320,12 @@ nav#mobile ul li a {
 nav#mobile ul li a {
 	padding: 5px;
 	text-decoration: none;
-	line-height: 40px;
+	line-height: 30px;
 	background: #000;
 	color: #fff;
 }
 nav#mobile ul li .sub-menu li a {
-	padding: 0 0 0 10px;
+	padding: 5px 0 5px 10px;
 }
 nav#mobile ul li .sub-menu li a:before {
 	font-family: sans-serif;
@@ -409,7 +426,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 #map {
 	position: relative;
 	width: 100%;
-	height: 250px;
+	height: 615px;
 	top: 0;
 }
 #map img {
@@ -469,7 +486,6 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	position: absolute;
 	left: 20px;
 	font-size: 8rem;
-	font-style: italic;
 	width: 400px;
 	height: auto;
 	letter-spacing: 3px;
@@ -555,7 +571,6 @@ h2.aligncenter {
 }
 .mainTitle {
     font-family: "league-gothic",sans-serif;
-	font-style: italic;
     font-size: 5rem;
     font-weight: 400;
     line-height: 1.1;
@@ -878,8 +893,8 @@ h2.aligncenter {
 	margin: -25px 0 0 -25px;
 }
 .halfEight {
-	width: 500px;
-	height: 500px;
+	width: 620px;
+	height: 620px;
 	border-radius: 50%;
 	text-align: center;
 	-webkit-justify-content: center;
@@ -892,12 +907,16 @@ h2.aligncenter {
 .halfEight span, #centerPlus span {
 	display: table-cell;
 	vertical-align: middle;
-	width: 500px;
-	height: 500px;
+	width: 620px;
+	height: 620px;
 	padding: 40px;
 	border-radius: 50%;
 	-webkit-transition: all 0.5s ease;
 		transition: all 0.5s ease;
+}
+.mainRoundel {
+	width: 100%;
+	height: 100%;
 }
 #centerPlus span {
 	display: table-cell;
@@ -910,16 +929,23 @@ h2.aligncenter {
 		transition: all 0.5s ease;
 }
 .halfEight:nth-child(1) span {
-	font-size: 2.6rem;
+	font-size: 3.2rem;
 }
 .halfEight.title span h2 {
-	font-size: 6rem;
+	font-size: 7rem;
 }
 .halfEight.title span h3 {
 	font-family: "league-gothic", sans-serif;
 	font-size: 4rem;
-	word-spacing: 200px;
 	color: #111;
+	font-weight: 300;
+	text-shadow: none !important;
+}
+.halfEight.title span h4 {
+	font-family: "league-gothic", sans-serif;
+	font-size: 2.5rem;
+	color: #111;
+	text-transform: capitalize;
 	font-weight: 300;
 	text-shadow: none !important;
 }
@@ -936,6 +962,7 @@ h2.aligncenter {
 }
 #skills p, #skills ul {
 	line-height: 1.4;
+	font-size: 2.2rem;
 }
 .halfEight:nth-child(1) {
 	-webkit-box-ordinal-group: 1;
@@ -974,19 +1001,20 @@ h2.aligncenter {
 .halfEight:nth-child(2) span {
 	font-size: 1.6rem;
 }
+.case_studies .halfEight:nth-child(2) span {
+	font-size: 1.6rem;
+}
 .nonRoundelContent {
 	width: 600px;
 }
 #skills .nonRoundelContent p {
 	color: #000;
 	margin-bottom: 0.5em;
-	font-size: 1.6rem;
+	font-size: 2rem;
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.5) !important;
 }
 .dark #skills .nonRoundelContent p {
 	color: #fff;
-	margin-bottom: 0.5em;
-	font-size: 1.6rem;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5) !important;
 }
 .tweet , .padding {
@@ -1004,12 +1032,11 @@ h2.aligncenter {
 	display: inline;
 }
 .single .col-1-1, .error404 .col-1-1, .bg {
-	background: rgba(255,255,255, 0.8);
+	background: #fff;
+	background: rgba(255,255,255, 0.6);
 	border: 1px solid #93afba;
-}
-.single-case_studies .col-1-1 {
-	background: none;
-	border: none;
+	color: #111;
+	text-shadow: none;
 }
 #people {
 	position: relative;
@@ -1110,11 +1137,8 @@ h2.aligncenter {
 }
 .single-case_studies h2, .single-case_studies h3, .single-case_studies h4, .single-case_studies h5, .single-case_studies h6 {
 	margin: 0;
-	font-family: 'league-gothic-condensed', sans-serif;
+	font-family: 'league-gothic', sans-serif;
 	text-transform: uppercase;
-}
-.single-case_studies .col-1-1 {
-	background: transparent;
 }
 .single-case_studies blockquote {
 	margin: 0;
@@ -1559,9 +1583,12 @@ table > tfoot > tr.danger > th {
 	header {
 		overflow: hidden;
 	}
+	#map {
+		height: 250px;
+	}
 	#rightroundel {
-		width: 170px;
-		height: 170px;
+		width: 200px;
+		height: 200px;
 		left: 50%;
 		right: auto;
 		margin: 0 0 0 -10px;
@@ -1569,8 +1596,8 @@ table > tfoot > tr.danger > th {
 		line-height: 170px;
 	}
 	#leftroundel {
-		width: 170px;
-		height: 170px;
+		width: 200px;
+		height: 200px;
 		right: 50%;
 		left: auto;
 		margin: 0 -10px 0 0;
@@ -1676,8 +1703,8 @@ table > tfoot > tr.danger > th {
 		width: 100%;
 	}
 	#rightroundel {
-		width: 170px;
-		height: 170px;
+		width: 200px;
+		height: 200px;
 		left: 50%;
 		right: auto;
 		margin: 0 0 0 -10px;
@@ -1685,8 +1712,8 @@ table > tfoot > tr.danger > th {
 		line-height: 170px;
 	}
 	#leftroundel {
-		width: 170px;
-		height: 170px;
+		width: 200px;
+		height: 200px;
 		right: 50%;
 		left: auto;
 		margin: 0 -10px 0 0;

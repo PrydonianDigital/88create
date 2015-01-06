@@ -61,24 +61,25 @@
 		color: #fff;
 		text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 	}
-	<?php else : ?>
-	#bodyContent {
-		text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
-	}	
+	#closeWork {
+		color: #efefef;
+	}
 	<?php endif; ?>
 </style>
 <div class="grid large">
-
-	<h2 class="mainTitle"><?php the_title(); ?></h2>
+	
+	<a id="closeWork" title="Back to Case Studies" onclick="javascript:window.history.go(-1);"><i class="icon-cancel-circle"></i></a>
+	
+	<?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); if($title != '') : ?><h2 class="mainTitle"><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h2><?php endif; ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-	<div class="col-1-1">
-		<div class="grid">
-			<div class="col-1-1">
-				<?php the_content(); ?>	
-			</div>
+	<h1 class="mainTitle"><?php the_title(); ?></h1>
+	<div class="grid">
+	
+		<div <?php post_class('col-1-1'); ?>>
+			<?php the_content(); ?>
 		</div>
+		
 	</div>
 	
 	<?php endwhile; ?>

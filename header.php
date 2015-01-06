@@ -68,7 +68,7 @@
 		background-attachment: fixed;
 	}
 	header {
-		background: <?php global $post; $colour = get_post_meta( $post->ID, '_cmb_colour', true ); echo $colour; ?>;
+		
 	}
 	<?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?>
 	header {
@@ -215,8 +215,8 @@
 		
 	}
 	.light footer {
-		color: #fff;
-		text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+		color: #000;
+		text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
 	}
 </style>
 </head>
