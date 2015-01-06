@@ -19,7 +19,33 @@
 						<span>+</span>
 					</div>
 				</div>
+			</section>	
+			<?php
+			$args = array (
+				'page_id' => '8732',
+			);
+			// The Query
+			$eet = new WP_Query( $args );
+			// The Loop
+			if ( $eet->have_posts() ) {
+				while ( $eet->have_posts() ) {
+					$eet->the_post();
+			?>
+			<section id="<?php global $post; echo $post->post_name; ?>"<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?> data-background="<?php global $post; $lh = get_post_meta( $post->ID, '_cmb_lh', true ); echo $bg; ?>"<?php endif; ?> <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?> data-background-color="#000"<?php endif; ?>>
+				<div class="roundelContainer">
+					<div class="nonRoundelContent">
+						<?php the_content(); ?>
+					</div>
+				</div>
 			</section>			
+			<?php
+				}
+			} else {
+				// no posts found
+			}
+			// Restore original Post Data
+			wp_reset_postdata();
+			?>
 			<?php
 				$args = array (
 					'post_type' => 'engager',

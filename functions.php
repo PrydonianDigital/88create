@@ -96,7 +96,7 @@ function workPage() {
 add_action('wp_enqueue_scripts', 'workPage');
 
 function skillsPage() {
-    if ( is_page(array('create', 'engage', 'about', 'tech')) ) {
+    if ( is_page(array('home', 'create', 'engage', 'about', 'tech')) ) {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');

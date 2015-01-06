@@ -137,11 +137,13 @@ p {
 	margin-top: 0;
 }
 a {
-	color: #44439b;
+	color: #938dc4;
 	text-decoration: none;
+	-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
 }
 a:hover, a:active {
-	color: #938dc4;
+	color: #93afba;
 }
 header {
 	padding: 0 20px;
@@ -384,44 +386,47 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 		animation-fill-mode: both;
 }
 #leftroundel, #rightroundel {
-	width: 500px;
-	height: 500px;
-	background: rgba(255,255,255,0.99);
+	width: 620px;
+	height: 620px;
+	background: rgba(255,255,255,0.9);
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
-	line-height: 500px;
+	line-height: 620px;
 	font-size: 6rem;
 	letter-spacing: 5px;
 	font-weight: 300;
 	text-align: center;
-	font-family: "league-gothic-condensed";
-	margin-top: -150px;
+	font-family: "league-gothic";
+	margin-top: -240px;
 	text-transform: uppercase;
 }
 #plus {
 	top: 50%;
 	position: absolute;
-	width: 40px;
-	height: 500px;
-	line-height: 500px;
-	font-size: 8rem;
+	width: 50px;
+	height: 620px;
+	line-height: 620px;
+	font-size: 5rem;
 	text-align: center;
 	left: 50%;
-	margin: -180px 0 0 -20px;
+	margin: -240px 0 0 -23px;
 	z-index: 20;
 	color: #000;
-	font-family: "league-gothic-condensed";
+	font-family: "league-gothic";
 }
 #leftroundel {
 	left: 50%;
-	margin: -180px 0 0 -470px;
+	margin: -240px 0 0 -600px;
 	z-index: 10;
 }
 #rightroundel {
 	right: 50%;
-	margin: -180px -470px 0 0;
+	margin: -240px -600px 0 0;
 	z-index: 5;
+}
+.home .reveal .controls {
+	display: none !important;
 }
 #map {
 	position: relative;
@@ -881,7 +886,7 @@ h2.aligncenter {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	font-size: 6rem;
+	font-size: 5rem;
 	color: #000;
 	text-shadow: none;
 	width: 50px;
@@ -979,6 +984,7 @@ h2.aligncenter {
 	-ms-flex-item-align: center;
 	align-self: center;
 	background: #fff;
+	background: rgba(255,255,255,0.9);
 	margin-right: -20px;
 }
 .halfEight:nth-child(2) {
@@ -996,6 +1002,7 @@ h2.aligncenter {
 	-ms-flex-item-align: center;
 	align-self: center;
 	background: #fff;
+	background: rgba(255,255,255,0.9);
 	margin-left: -20px;
 }
 .halfEight:nth-child(2) span {
@@ -1037,6 +1044,7 @@ h2.aligncenter {
 	border: 1px solid #93afba;
 	color: #111;
 	text-shadow: none;
+	font-family: sans-serif;
 }
 #people {
 	position: relative;
@@ -1674,7 +1682,7 @@ table > tfoot > tr.danger > th {
 		width: 100%;
 		max-width: 100%;
 		height: auto;
-		margin-top: -60px;
+		margin-top: -15px;
 	}
 	.person h2 {
 		font-size: 1.4rem;

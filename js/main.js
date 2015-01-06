@@ -95,6 +95,7 @@ $j(function() {
 			var link = $j(this).attr('href');
 			Reveal.slide(link,0,0,0)
 		});
+		$j('.home .reveal .controls').css('display', 'none');
 	}
 	
 	// rollovers
