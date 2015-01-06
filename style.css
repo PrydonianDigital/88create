@@ -132,11 +132,11 @@ p {
 	margin-top: 0;
 }
 a {
-	color: #ef4733;
+	color: #44439b;
 	text-decoration: none;
 }
 a:hover, a:active {
-	color: #00ad5f;
+	color: #938dc4;
 }
 header {
 	padding: 0 20px;
@@ -512,11 +512,15 @@ label {
 	text-transform: uppercase;
 	font-family: "league-gothic", sans-serif;
 	font-size: 2rem;
+	font-weight: 300 !important;
 }
 label span {
 	text-transform: capitalize;
 	font-family: "league-gothic", sans-serif;
 	font-size: 1.2rem;
+}
+.contact-form label span {
+	color: #44439b !important;
 }
 .alignleft {
 	float: left;
@@ -533,6 +537,9 @@ label span {
 .aligncenter {
 	text-align: center;
 	margin: 0 auto;
+}
+.gm-style-iw div {
+	overflow: hidden !important;
 }
 h2.aligncenter {
 	font-family: "league-gothic",sans-serif;
@@ -757,7 +764,7 @@ h2.aligncenter {
 }
 .portfolio.work, .portfolio.case_studies {
 	margin-top: -25px !important;
-	padding: 5px !important;
+	padding: 0 !important;
 }
 .format-quote, .format-video {
 	background: #fff;
@@ -985,6 +992,7 @@ h2.aligncenter {
 }
 .single .col-1-1, .error404 .col-1-1, .bg {
 	background: rgba(255,255,255, 0.8);
+	border: 1px solid #93afba;
 }
 #people {
 	position: relative;
@@ -1158,6 +1166,8 @@ footer {
 	bottom: 0;
 	right: 0;
 	z-index: 1200;
+	text-align: right;
+	padding: 10px;
 	-webkit-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
@@ -1186,12 +1196,33 @@ aside#cookies #close, aside.cookies #close i {
 	background: rgba(255,255,255,0.8) !important;
 }
 #closeWork {
-	position: absolute;
-	top: 20px;
+	position: fixed;
+	top: 198px;
 	right: 40px;
 	font-size: 4rem;
-	color: #efefef;
+	color: #111;
 	z-index: 1200;
+}
+#closeWork i {
+	cursor: pointer;
+}
+.workRoundelContainer {
+	position: absolute;
+	width: calc(100% - 42px);
+	height: calc(100% - 42px);
+}
+.workRoundel {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: #000;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	font-size: 1.4rem;
+	padding: 110px 10px;
+	text-align: center;
+	display: none;
+	position: absolute;
 }
 
 /* --- GRID -- */
@@ -1611,7 +1642,7 @@ table > tfoot > tr.danger > th {
 	}
 	#closeWork {
 		z-index: 1200;
-		top: 20px;
+		top: 178px;
 		right: 20px;
 	}
 }
@@ -1738,6 +1769,12 @@ table > tfoot > tr.danger > th {
 		max-width: 100%;
 		height: auto;
 		margin-top: 0;
+	}
+	.workRoundel {
+		width: 100px;
+		height: 100px;
+		font-size: 0.6rem;
+		padding: 43px 5px;
 	}
 }
 
@@ -2166,7 +2203,7 @@ table > tfoot > tr.danger > th {
 	width: 60px;
 	border-radius: 50%;
 	position: fixed;
-	bottom: 40px;
+	bottom: 80px;
 	right: 20px;
 	z-index: 10;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -2208,7 +2245,7 @@ table > tfoot > tr.danger > th {
 		height: 60px;
 		width: 60px;
 		right: 20px;
-		bottom: 40px;
+		bottom: 80px;
 	}
 }
 

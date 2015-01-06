@@ -96,7 +96,7 @@ function workPage() {
 add_action('wp_enqueue_scripts', 'workPage');
 
 function skillsPage() {
-    if ( is_page(array('create', 'engage', 'about')) ) {
+    if ( is_page(array('create', 'engage', 'about', 'tech')) ) {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
@@ -141,7 +141,7 @@ function engage() {
 	$args = array(
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'page-attributes' ),
-		'taxonomies'          => array( 'category', 'post_tag' ),
+		'taxonomies'          => array( ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
@@ -159,6 +159,46 @@ function engage() {
 }
 // Hook into the 'init' action
 add_action( 'init', 'engage', 0 );
+
+// Register Tech Post Type
+function tech() {
+	$labels = array(
+		'name'                => _x( 'Tech', 'Post Type General Name', 'ee' ),
+		'singular_name'       => _x( 'Tech', 'Post Type Singular Name', 'ee' ),
+		'menu_name'           => __( 'Tech', 'ee' ),
+		'parent_item_colon'   => __( 'Parent Tech:', 'ee' ),
+		'all_items'           => __( 'All Tech', 'ee' ),
+		'view_item'           => __( 'View Tech', 'ee' ),
+		'add_new_item'        => __( 'Add New Tech', 'ee' ),
+		'add_new'             => __( 'Add New', 'ee' ),
+		'edit_item'           => __( 'Edit Tech', 'ee' ),
+		'update_item'         => __( 'Update Tech', 'ee' ),
+		'search_items'        => __( 'Search Tech', 'ee' ),
+		'not_found'           => __( 'Not found', 'ee' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'ee' ),
+	);
+	$args = array(
+		'label'               => __( 'tech', 'ee' ),
+		'description'         => __( 'Tech', 'ee' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'thumbnail', ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => true,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'tech', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'tech', 0 );
 
 // Register Portfolio Post Type
 function portfolio() {
@@ -234,6 +274,39 @@ function portfolio_tax() {
 }
 // Hook into the 'init' action
 add_action( 'init', 'portfolio_tax', 0 );
+
+// Register What We Did Taxonomy
+function whatwedid() {
+	$labels = array(
+		'name'                       => _x( 'What We Did', 'Taxonomy General Name', 'ee' ),
+		'singular_name'              => _x( 'What We Did', 'Taxonomy Singular Name', 'ee' ),
+		'menu_name'                  => __( 'What We Did', 'ee' ),
+		'all_items'                  => __( 'All What We Did', 'ee' ),
+		'parent_item'                => __( 'Parent What We Did', 'ee' ),
+		'parent_item_colon'          => __( 'Parent What We Did:', 'ee' ),
+		'new_item_name'              => __( 'New What We Did', 'ee' ),
+		'add_new_item'               => __( 'Add New What We Did', 'ee' ),
+		'edit_item'                  => __( 'Edit What We Did', 'ee' ),
+		'update_item'                => __( 'Update What We Did', 'ee' ),
+		'separate_items_with_commas' => __( 'Separate What We Did with commas', 'ee' ),
+		'search_items'               => __( 'Search What We Did', 'ee' ),
+		'add_or_remove_items'        => __( 'Add or remove What We Did', 'ee' ),
+		'choose_from_most_used'      => __( 'Choose from the most used What We Did', 'ee' ),
+		'not_found'                  => __( 'Not Found', 'ee' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'whatwedid', array( 'work' ), $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'whatwedid', 0 );
 
 // Register Services Post Type
 function services() {
@@ -725,7 +798,7 @@ function skillset( $meta_boxes ) {
     $meta_boxes['video_metabox'] = array(
         'id' => 'extras',
         'title' => 'Extras',
-        'pages' => array('skill', 'engager'), // post type
+        'pages' => array('skill', 'engager', 'tech'), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
@@ -906,6 +979,9 @@ function add_menu_icons_styles(){
 	}
 	#adminmenu #menu-posts-engager div.wp-menu-image:before, #dashboard_right_now .engager-count a:before {
 		content: "\f111";
+	}
+	#adminmenu #menu-posts-tech div.wp-menu-image:before, #dashboard_right_now .tech-count a:before {
+		content: "\f106";
 	}
 	</style>';
 }

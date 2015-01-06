@@ -49,6 +49,26 @@ $j(function() {
 			}
 		});
 	});
+
+	if(element_exists('.workRoundel')) {
+		(function fadeInDiv(){
+		    var divs = $j('.workRoundel');
+		    var divsize = (250).toFixed(),
+		    	container = $j('.workRoundelContainer'),
+		    	posx = (Math.random() * (container.width() - divsize)).toFixed(),
+		    	posy = (Math.random() * (container.height() - divsize)).toFixed(),
+		    	elem = divs.eq(Math.floor(Math.random()*divs.length));
+		    if (!elem.is(':visible')){
+		        elem.fadeIn((2000),fadeInDiv);
+		        elem.css({
+		            'left':posx+'px',
+		            'top':posy+'px',
+		        });
+		    } else {
+		        elem.fadeOut((2000),fadeInDiv); 
+		    }
+		})();
+	}
 	
 	// people 
 	if(element_exists('#people')) {
@@ -144,7 +164,7 @@ $j(function() {
 			infowindow:{
 				latLng:[51.52419, -0.098877],
 				options:{
-					content: "<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href='tel:+442072518617'>+44 (0)20 7251 8617</a></p>"
+					content: '<div style="width: 160px; height: 140px;"><h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>'
 				},
 				events:{
 					closeclick: function(infowindow){}
@@ -152,7 +172,7 @@ $j(function() {
 			},
 			marker:{
 				values: [
-					{latLng:[51.523803, -0.098877], data: '<h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p>', options: {
+					{latLng:[51.523803, -0.098877], data: '<div style="width: 160px; height: 140px;"><h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>', options: {
 						icon: '/wp-content/themes/88create/img/marker.png'
 					}}
 				],
