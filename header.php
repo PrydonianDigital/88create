@@ -208,8 +208,11 @@
 	.light header {
 		border-color: #000;
 	}
-	.dark #close, .dark #close i {
+	.light #close, .light #close i {
 		color: #000 !important;
+	}
+	.dark #close, .dark #close i {
+		color: #fff !important;
 	}
 	.light #legend {
 		
