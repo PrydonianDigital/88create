@@ -96,7 +96,7 @@ function workPage() {
 add_action('wp_enqueue_scripts', 'workPage');
 
 function skillsPage() {
-    if ( is_page(array('home', 'create', 'engage', 'about', 'tech')) ) {
+    if ( is_page(array('home', 'create', 'engage', 'about', 'tech', 'in-house')) ) {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
@@ -473,6 +473,47 @@ function skills() {
 // Hook into the 'init' action
 add_action( 'init', 'skills', 0 );
 
+// Register InHouse Post Type
+function inHouse() {
+
+	$labels = array(
+		'name'                => _x( 'In House', 'Post Type General Name', 'ee' ),
+		'singular_name'       => _x( 'In House', 'Post Type Singular Name', 'ee' ),
+		'menu_name'           => __( 'In House', 'ee' ),
+		'parent_item_colon'   => __( 'Parent In House:', 'ee' ),
+		'all_items'           => __( 'All In House', 'ee' ),
+		'view_item'           => __( 'View In House', 'ee' ),
+		'add_new_item'        => __( 'Add New In House', 'ee' ),
+		'add_new'             => __( 'Add New', 'ee' ),
+		'edit_item'           => __( 'Edit In House', 'ee' ),
+		'update_item'         => __( 'Update In House', 'ee' ),
+		'search_items'        => __( 'Search In House', 'ee' ),
+		'not_found'           => __( 'Not found', 'ee' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'ee' ),
+	);
+	$args = array(
+		'label'               => __( 'inhouse', 'ee' ),
+		'description'         => __( 'Post Type Description', 'ee' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => true,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'inhouse', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'inHouse', 0 );
+
 // Register Timeline Post Type
 function timeline() {
 	$labels = array(
@@ -801,7 +842,7 @@ function skillset( $meta_boxes ) {
     $meta_boxes['video_metabox'] = array(
         'id' => 'extras',
         'title' => 'Extras',
-        'pages' => array('skill', 'engager', 'tech'), // post type
+        'pages' => array('skill', 'engager', 'tech', 'inhouse'), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
@@ -985,6 +1026,9 @@ function add_menu_icons_styles(){
 	}
 	#adminmenu #menu-posts-tech div.wp-menu-image:before, #dashboard_right_now .tech-count a:before {
 		content: "\f106";
+	}
+	#adminmenu #menu-posts-inhouse div.wp-menu-image:before, #dashboard_right_now .inhouse-count a:before {
+		content: "\f102";
 	}
 	</style>';
 }
