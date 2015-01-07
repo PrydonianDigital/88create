@@ -898,8 +898,8 @@ h2.aligncenter {
 	margin: -25px 0 0 -25px;
 }
 .halfEight {
-	width: 620px;
-	height: 620px;
+	width: 600px;
+	height: 600px;
 	border-radius: 50%;
 	text-align: center;
 	-webkit-justify-content: center;
@@ -912,8 +912,8 @@ h2.aligncenter {
 .halfEight span, #centerPlus span {
 	display: table-cell;
 	vertical-align: middle;
-	width: 620px;
-	height: 620px;
+	width: 600px;
+	height: 600px;
 	padding: 40px;
 	border-radius: 50%;
 	-webkit-transition: all 0.5s ease;
