@@ -255,19 +255,19 @@ body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li 
 	color: #fff;
 	background: #000;	
 }
-nav#desktop li.menu-item-8728 a{
+nav#desktop li.menu-item-8728 a, nav#desktop li.loop-login a {
 	text-indent: -999em;
 	background: #000 url(img/looplogo.png) no-repeat top center;
 }
-nav#desktop li.menu-item-8728 a:hover {
+nav#desktop li.menu-item-8728 a:hover, nav#desktop li.loop-login a:hover {
 	text-indent: -999em;
 	background: #efefef url(img/looplogo.png) no-repeat bottom center;
 }
-nav#mobile li.menu-item-8729 a {
+nav#mobile li.menu-item-8729 a, nav#mobile li.loop-login a {
 	text-indent: -999em;
 	background: #000 url(img/looplogo.png) no-repeat top left;
 }
-nav#mobile li.menu-item-8729 a:hover, nav#mobile li.menu-item-8729 a:active {
+nav#mobile li.menu-item-8729 a:hover, nav#mobile li.menu-item-8729 a:active, nav#mobile li.loop-login a:hover, nav#mobile li.loop-login a:active {
 	text-indent: -999em;
 	background: #efefef url(img/looplogo.png) no-repeat bottom left;
 }
