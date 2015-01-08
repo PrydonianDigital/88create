@@ -208,11 +208,19 @@
 	.light header {
 		border-color: #000;
 	}
+	.light #cookies {
+		background: #000;
+		color: #fff;
+	}
+	.dark #cookies {
+		background: #fff;
+		color: #000;
+	}
 	.light #close, .light #close i {
-		color: #000 !important;
+		color: #fff !important;
 	}
 	.dark #close, .dark #close i {
-		color: #fff !important;
+		color: #000 !important;
 	}
 	.light #legend {
 		

@@ -898,8 +898,8 @@ h2.aligncenter {
 	margin: -25px 0 0 -25px;
 }
 .halfEight {
-	width: 600px;
-	height: 600px;
+	width: 550px;
+	height: 550px;
 	border-radius: 50%;
 	text-align: center;
 	-webkit-justify-content: center;
@@ -912,8 +912,8 @@ h2.aligncenter {
 .halfEight span, #centerPlus span {
 	display: table-cell;
 	vertical-align: middle;
-	width: 600px;
-	height: 600px;
+	width: 550px;
+	height: 550px;
 	padding: 40px;
 	border-radius: 50%;
 	-webkit-transition: all 0.5s ease;
@@ -1201,7 +1201,7 @@ h2.aligncenter {
 	left: 0;
 	width: 100%;
 	text-align: center;
-	z-index: 1101;
+	z-index: 1501;
 	background: #111;
 	color: #fff;
 	-webkit-transition: all 0.5s ease;
@@ -1705,6 +1705,10 @@ table > tfoot > tr.danger > th {
 		z-index: 1200;
 		top: 178px;
 		right: 20px;
+	}
+	footer {
+		line-height: 1;
+		font-size: 1.2rem;
 	}
 }
 @media only screen and (min-width : 320px) and (max-width : 568px) {
