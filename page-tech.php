@@ -18,10 +18,10 @@ $detect = new Mobile_Detect;
 			<section id="<?php global $post; echo $post->post_name; ?>"<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); if( $bg != '' ) : ?> data-background="<?php global $post; $bg = get_post_meta( $post->ID, '_cmb_bg', true ); echo $bg; ?>"<?php endif; ?> <?php global $post; $dbg = get_post_meta( $post->ID, '_cmb_dbg', true ); if( $dbg == 'on' ) : ?> data-background-color="#000"<?php endif; ?>>
 				<div class="roundelContainer">
 					<div class="leftRoundel halfEight title">
-						<span><h3><?php global $post; $lr = get_post_meta( $post->ID, '_cmb_lr', true ); echo $lr; ?></h3></span>
+						<span><h2><?php global $post; $lr = get_post_meta( $post->ID, '_cmb_lr', true ); echo $lr; ?></h2></span>
 					</div>
 					<div class="rightRoundel halfEight title">
-						<span><h3><?php global $post; $rr = get_post_meta( $post->ID, '_cmb_rr', true ); echo $rr; ?></h3></span>
+						<span><h2><?php global $post; $rr = get_post_meta( $post->ID, '_cmb_rr', true ); echo $rr; ?></h2></span>
 					</div>
 					<div id="centerPlus">
 						<span>+</span>
