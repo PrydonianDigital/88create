@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 
+<?php
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;	
+?>
+<?php if ( $detect->isMobile() ) { ?>
 <div id="legend">
-	<a id="close" href="#close"><i class="icon-cancel-circle"></i></a> To navigate, use your keyboard left and right arrow keys, click the arrows at the bottom right or swipe on mobile devices
+	<a id="close" href="#close"><i class="icon-cancel-circle"></i></a> To navigate, swipe left and right.
 </div>
+<?php } else { ?>
+	<a id="close" href="#close"><i class="icon-cancel-circle"></i></a> To navigate, use your keyboard left and right arrow keys or click the arrows at the bottom right	
+<?php } ?>
 
 <div id="skills" class="fadeIn animated case_studies">	
 	<div class="reveal">

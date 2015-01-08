@@ -1600,6 +1600,9 @@ table > tfoot > tr.danger > th {
 	#map {
 		height: 250px;
 	}
+	.reveal .controls {
+		display: none !important;
+	}
 	#rightroundel {
 		width: 200px;
 		height: 200px;
@@ -1712,6 +1715,9 @@ table > tfoot > tr.danger > th {
 		width: 100%;
 		max-width: 100%;
 		margin: 0 auto;
+	}
+	.reveal .controls {
+		display: none;
 	}
 	[class*='col-'] {
 		width: 100%;
