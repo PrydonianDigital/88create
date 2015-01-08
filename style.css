@@ -967,7 +967,7 @@ h2.aligncenter {
 	margin: 0;
 	text-align: center;
 }
-#skills h2 {
+#skills h2, #skills h3 {
 	font-family: "league-gothic", sans-serif;
 }
 #skills p, #skills ul {

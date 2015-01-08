@@ -22,7 +22,7 @@
 			</section>			
 			<?php
 			$args = array (
-				'page_id' => '8732',
+				'page_id' => '8764',
 			);
 			// The Query
 			$eet = new WP_Query( $args );
