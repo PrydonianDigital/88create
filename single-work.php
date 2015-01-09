@@ -79,7 +79,7 @@
 		<div <?php post_class('col-1-1'); ?>>
 			<div class="workRoundelContainer">
 			<?php 
-				$terms = get_terms('whatwedid'); 
+				$terms = get_the_terms($post->ID, 'whatwedid'); 
 				$count = count($terms); 
 				if ( $count > 0 ) { 
 					foreach ( $terms as $term ) { 
