@@ -15,7 +15,6 @@ $detect = new Mobile_Detect;
 <div id="skills" class="fadeIn animated case_studies">	
 	<div class="reveal">
 		<div class="slides">
-			</section>			
 			<?php
 				$args = array (
 					'post_type' => 'case_studies',

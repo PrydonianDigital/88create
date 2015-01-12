@@ -66,6 +66,8 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	
 	<div class="grid">
+		
+		<a id="closeWork" title="Back to News" onclick="javascript:window.history.go(-1);"><i class="icon-cancel-circle"></i></a>
 
 		<div class="col-1-1">
 	
