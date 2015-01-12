@@ -57,6 +57,13 @@
 	footer {
 		color: #fff;
 	}
+	#bodyContent {
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	}
+	#closeWork {
+		color: #efefef;
+	}
 	<?php endif; ?>
 </style>
 <div class="grid large">
