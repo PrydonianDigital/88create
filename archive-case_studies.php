@@ -19,6 +19,7 @@ $detect = new Mobile_Detect;
 			<?php
 				$args = array (
 					'post_type' => 'case_studies',
+					'orderby' => 'menu_order',
 					'posts_per_page' => -1
 				);
 				$services = new WP_Query( $args );
