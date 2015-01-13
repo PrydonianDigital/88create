@@ -112,6 +112,9 @@ body {
 	letter-spacing: 1px;
 	overflow-x: hidden;
 }
+#legend {
+	display: none;
+}
 svg {
 	position: absolute;
 	top: -800px;
@@ -431,7 +434,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 #map {
 	position: relative;
 	width: 100%;
-	height: 615px;
+	height: 354px;
 	top: 0;
 }
 #map img {

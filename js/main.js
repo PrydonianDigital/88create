@@ -15,6 +15,7 @@ $j(function() {
 	if($j.cookie('legend')) {
 		$j('#legend').hide();
 	} else {
+		$j('#legend').show();
 		$j('#legend #close').on('click', function(e){
 			e.preventDefault();
 			$j.cookie('legend', 'yes', { expires: 700 });
