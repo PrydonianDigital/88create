@@ -112,9 +112,6 @@ body {
 	letter-spacing: 1px;
 	overflow-x: hidden;
 }
-#legend {
-	display: none;
-}
 svg {
 	position: absolute;
 	top: -800px;
@@ -1199,6 +1196,7 @@ h2.aligncenter {
 	color: #000;
 }
 #legend {
+	display: none;
 	position: fixed;
 	bottom: 0;
 	left: 0;
