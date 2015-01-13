@@ -8,7 +8,9 @@ $detect = new Mobile_Detect;
 	<a id="close" href="#close"><i class="icon-cancel-circle"></i></a> To navigate, swipe left and right.
 </div>
 <?php } else { ?>
+<div id="legend">
 	<a id="close" href="#close"><i class="icon-cancel-circle"></i></a> To navigate, use your keyboard left and right arrow keys or click the arrows at the bottom right	
+</div>
 <?php } ?>
 
 <div id="skills" class="fadeIn animated">	
