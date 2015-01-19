@@ -789,6 +789,12 @@ function case_details( $meta_boxes ) {
                 'id' => $prefix . 'dbg',
                 'type' => 'checkbox'
             ),
+            array(
+                'name' => 'Hide Title',
+                'desc' => 'Hides repeated titles for mobile site',
+                'id' => $prefix . 'ht',
+                'type' => 'checkbox'
+            ),
         ),
     );
 

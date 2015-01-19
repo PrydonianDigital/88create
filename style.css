@@ -124,7 +124,7 @@ em {
 	font-family: "league-gothic", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "league-gothic-condensed", sans-serif;
+	font-family: "league-gothic", sans-serif;
 	font-weight: 700;
 	margin-top: 0;
 }
@@ -367,6 +367,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	height: 100%;
 	padding-top: 158px;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 #homePage, #homePageAbout {
 	position: absolute;

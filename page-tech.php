@@ -58,7 +58,7 @@ $detect = new Mobile_Detect;
 			<h2 itemprop="name headline"><?php global $post; $lr = get_post_meta( $post->ID, '_cmb_lr', true ); echo $lr; ?> + <?php global $post; $rr = get_post_meta( $post->ID, '_cmb_rr', true ); echo $rr; ?></h2>
 			<?php
 			$args = array (
-				'page_id' => '9060',
+				'page_id' => '8764',
 			);
 			// The Query
 			$eet = new WP_Query( $args );

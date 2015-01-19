@@ -60,14 +60,19 @@ $detect = new Mobile_Detect;
 				'post_type' => 'case_studies',
 				'orderby' => 'menu_order',
 				'order' => 'ASC',
-				'post_parent' => 0
+				'post_parent' => 0,
+				'posts_per_page' => -1
 			);
 			$services = new WP_Query( $args );
 			if ( $services->have_posts() ) {
 				while ( $services->have_posts() ) {
 					$services->the_post();
-		?>	
+		?>
+		<?php global $post; $ht = get_post_meta( $post->ID, '_cmb_ht', true ); if( $ht == 'on' ) : ?>
+		
+		<?php else : ?>
 		<h2><?php the_title(); ?></h2>
+		<?php endif; ?>
 		<?php the_content(); ?>			
 		<?php
 					

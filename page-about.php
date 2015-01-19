@@ -50,7 +50,7 @@ $detect = new Mobile_Detect;
 			<h2>About Us</h2>
 			<?php
 				$args = array (
-					'pagename' => 'About Content',
+					'page_id' => '8504',
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
 				);
@@ -90,7 +90,7 @@ $detect = new Mobile_Detect;
 			</section>			
 			<?php
 				$args = array (
-					'pagename' => 'About Content',
+					'page_id' => '8504',
 					'orderby' => 'menu_order',
 					'order' => 'ASC',
 				);
