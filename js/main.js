@@ -18,7 +18,7 @@ $j(function() {
 		$j('#legend').show();
 		$j('#legend #close').on('click', function(e){
 			e.preventDefault();
-			$j.cookie('legend', 'yes', { expires: 700 });
+			$j.cookie('legend', 'yes', { expires: 700, path: '/' });
 			$j('#legend').hide();
 		});		
 	}
@@ -28,7 +28,7 @@ $j(function() {
 	} else {
 		$j('aside #close').on('click', function(e){
 			e.preventDefault();
-			$j.cookie('cookies', 'yes', { expires: 700 });
+			$j.cookie('cookies', 'yes', { expires: 700, path: '/'  });
 			$j('aside').hide();
 		});		
 	}
@@ -123,7 +123,7 @@ $j(function() {
 		$j('.format-video iframe').sixteenbynine();
 		
 		var $container = $j('#portfolio'),
-			$imgs = $j('img.lazy');	
+			$imgs = $j('#portfolio img.lazy');	
 			
 		$imgs.lazyload();
 		
@@ -138,6 +138,7 @@ $j(function() {
 		var $optionSets = $j('#filters'),
 		$optionLinks = $optionSets.find('a');
 		$optionLinks.click(function(){
+			$j('img.lazy').trigger('appear');
 			var $this = $j(this);
 			if ( $this.hasClass('selected') ) {
 				return false;
@@ -166,7 +167,7 @@ $j(function() {
 			infowindow:{
 				latLng:[51.52419, -0.098877],
 				options:{
-					content: '<div style="width: 160px; height: 140px;"><h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>'
+					content: '<div style="width: 160px; height: 140px;" itemscope itemtype="http://schema.org/LocalBusiness"><h4 itemprop="name"><a itemprop="url" href="http://88create.london">88Create</a></h4><p><span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">88 Goswell Road</span><br /><span itemprop="addressLocality">London</span><br /><span itemprop="postalCode">EC1V 7DB</span><br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>>'
 				},
 				events:{
 					closeclick: function(infowindow){}
@@ -174,7 +175,7 @@ $j(function() {
 			},
 			marker:{
 				values: [
-					{latLng:[51.523803, -0.098877], data: '<div style="width: 160px; height: 140px;"><h4>88Create</h4><p>88 Goswell Road<br />London<br />EC1V 7DB<br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>', options: {
+					{latLng:[51.523803, -0.098877], data: '<div style="width: 160px; height: 140px;" itemscope itemtype="http://schema.org/LocalBusiness"><h4 itemprop="name"><a itemprop="url" href="http://88create.london">88Create</a></h4><p><span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">88 Goswell Road</span><br /><span itemprop="addressLocality">London</span><br /><span itemprop="postalCode">EC1V 7DB</span><br /><a href="tel:+442072518617">+44 (0)20 7251 8617</a></p></div>', options: {
 						icon: '/wp-content/themes/88create/img/marker.png'
 					}}
 				],

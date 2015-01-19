@@ -8,6 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+<link rel="canonical" href="<?php echo get_permalink( $post->ID ); ?>">
+<?php echo basic_wp_seo(); ?>
 <?php wp_head(); ?>
 <script src="//use.typekit.net/rwx4edd.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
@@ -253,7 +255,7 @@ $detect = new Mobile_Detect;
 	<div id="ball9" class="ball"></div>
 	<div id="ball10" class="ball"></div>
 </div>
-<aside class="fadeInDownBig animated" id="cookies">
+<aside class="fadeInDownBig animated" id="cookies" style="display:none;">
 	<?php
 	$args = array (
 		'pagename' => 'Cookie Blurb',
@@ -290,4 +292,8 @@ $detect = new Mobile_Detect;
 		<?php wp_nav_menu( array( 'theme_location' => 'eemobile', 'container' => false ) ); ?>
 	</nav>
 <?php } ?>
+<?php if ( $detect->isMobile() && !$detect->isTablet() ) { ?>
+<div id="bodyContentMobile">
+<?php } else { ?>
 <div id="bodyContent">
+<?php } ?>

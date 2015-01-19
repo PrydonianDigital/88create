@@ -358,8 +358,15 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 }
 #bodyContent {
 	width: auto;
+	height: 100%;
 	height: calc(100% - 158px);
 	padding-top: 158px;
+}
+#bodyContentMobile {
+	width: auto;
+	height: 100%;
+	padding-top: 158px;
+	overflow: scroll;
 }
 #homePage, #homePageAbout {
 	position: absolute;
@@ -453,6 +460,14 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	position: relative;
 	width: 100%;
 	top: 40px;
+}
+.form-error {
+    clear: both;
+    padding-bottom: 60px;
+    position: absolute;
+    right: 20px;
+    top: 1100px;
+    width: 400px;
 }
 #about {
 	position: absolute;
@@ -919,6 +934,12 @@ h2.aligncenter {
 	-webkit-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
+_::-moz-svg-foreign-content, :root .halfEight span {
+	padding: 10px 40px;
+}
+_::-moz-svg-foreign-content, :root #centerPlus span {
+	padding: 5px 0;
+}
 .mainRoundel {
 	width: 100%;
 	height: 100%;
@@ -1041,13 +1062,21 @@ h2.aligncenter {
 	color: #e1e8ed;
 	display: inline;
 }
-.single .col-1-1, .error404 .col-1-1, .bg {
+.single .col-1-1, .error404 .col-1-1, .bg, .mobile .col-1-1 {
 	background: #fff;
 	background: rgba(255,255,255, 0.6);
 	border: 1px solid #93afba;
 	color: #111;
 	text-shadow: none;
 	font-family: sans-serif;
+}
+.mobile .col-1-1 {
+	background: #fff;
+	background: rgba(255,255,255, 0.8);
+	border: none;
+	padding: 20px !important;
+	color: #111 !important;
+	font-size: 1.2rem;
 }
 #people {
 	position: relative;
@@ -1215,6 +1244,7 @@ h2.aligncenter {
 		transition: all 0.5s ease;
 }
 footer {
+	line-height: 1;
 	position: fixed;
 	bottom: 0;
 	right: 0;
@@ -1337,6 +1367,9 @@ section .grid {
 }
 .page .hentry {
 	margin-bottom: 40px;
+}
+#bodyContentMobile .page, #bodyContentMobile .hentry {
+	margin-bottom: 60px;
 }
 .home .hentry {
 	margin-bottom: 0;
