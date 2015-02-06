@@ -281,7 +281,7 @@ $detect = new Mobile_Detect;
 	<?php if ( $detect->isMobile() ) { ?>
 		<a class="toggle fadeInRightBig animated"><i class="icon-menu"></i></a>
 	<?php } else { ?>
-		<nav class="fadeInRightBig animated" id="desktop">
+		<nav class="" id="desktop">
 			<?php wp_nav_menu( array( 'theme_location' => 'eemenu', 'container' => false ) ); ?>
 		</nav>
 	<?php } ?>

@@ -257,15 +257,16 @@ body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li 
 }
 nav#desktop li.menu-item-8728 a, nav#desktop li.loop-login a {
 	text-indent: -999em;
-	background: #000 url(img/looplogo.png) no-repeat top center;
+	background: #000 url(img/looplogo.png) no-repeat center 20px;
 }
 nav#desktop li.menu-item-8728 a:hover, nav#desktop li.loop-login a:hover {
 	text-indent: -999em;
-	background: #efefef url(img/looplogo.png) no-repeat bottom center;
+	background: #efefef url(img/looplogo.png) no-repeat center -2px;
 }
 nav#mobile li.menu-item-8729 a, nav#mobile li.loop-login a {
 	text-indent: -999em;
 	background: #000 url(img/looplogo.png) no-repeat top left;
+	background-position-x: 5px;
 }
 nav#mobile li.menu-item-8729 a:hover, nav#mobile li.menu-item-8729 a:active, nav#mobile li.loop-login a:hover, nav#mobile li.loop-login a:active {
 	text-indent: -999em;
@@ -297,7 +298,7 @@ nav#mobile {
 	width: 100%;
 	right: 0;
 	left: -100%;
-	top: 158px;
+	top: 160px;
 	z-index: 2000;
 	-webkit-transition: all 0.8s ease;
 		transition: all 0.8s ease;
@@ -315,6 +316,7 @@ nav#mobile ul li, nav#mobile ul li a {
 	height: auto;
 	border-radius: 0;
 	background: #000;
+	font-size: 1rem;
 }
 nav#mobile ul li a {
 	padding: 0 0 0 20px;
@@ -322,7 +324,7 @@ nav#mobile ul li a {
 nav#mobile ul li a {
 	padding: 5px;
 	text-decoration: none;
-	line-height: 30px;
+	line-height: 20px;
 	background: #000;
 	color: #fff;
 }
