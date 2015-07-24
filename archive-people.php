@@ -35,21 +35,21 @@ wp_reset_postdata();
 
 <?php
 require_once 'Mobile_Detect.php';
-$detect = new Mobile_Detect;	
+$detect = new Mobile_Detect;
 ?>
 
-	<?php 
+	<?php
 		$args = array(
 			'post_type' => 'people',
 			'orderby' => 'menu_order'
-		); 
+		);
 		$work = new WP_Query($args);
 	?>
-	
+
 	<div id="people">
-		
-		<?php if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); ?>	
-		<div id="hcard-<?php global $post; echo $post->post_name; ?>" class="vcard person col-1-7">
+
+		<?php if ($work->have_posts()) : while ($work->have_posts()) : $work->the_post(); ?>
+		<div id="hcard-<?php global $post; echo $post->post_name; ?>" class="vcard person col-1-8">
 			<a href="#">
 			<?php if ( $detect->isMobile() && !$detect->isTablet() ) { ?>
 				<?php the_post_thumbnail('person'); ?>
@@ -60,15 +60,15 @@ $detect = new Mobile_Detect;
 			<h5><?php global $post; $title = get_post_meta( $post->ID, '_cmb_title', true ); echo $title; ?></h5>
 			<div class="org">88Create</div>
 			<div class="adr">
-				<span class="locality">London</span>, 
+				<span class="locality">London</span>,
 				<span class="postcode">EC1V 7DB</span>
 			</div>
 			</a>
 		</div>
 		<?php endwhile; ?>
-	
+
 		<?php endif; ?>
-	
+
 	</div>
 
 <div id="contact">
@@ -82,9 +82,9 @@ $detect = new Mobile_Detect;
 		if ( $services->have_posts() ) {
 			while ( $services->have_posts() ) {
 				$services->the_post();
-	?>			
-	<?php the_content(); ?>	
-	<?php			
+	?>
+	<?php the_content(); ?>
+	<?php
 			}
 		} else {
 		// no posts found
@@ -92,5 +92,5 @@ $detect = new Mobile_Detect;
 		wp_reset_postdata();
 	?>
 </div>
-	
+
 <?php get_footer(); ?>

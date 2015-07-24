@@ -85,10 +85,10 @@ Version: 1.0.0
 	background-color: #111;
 	color: #fff;
 }
-html, body { 
-	margin: 0; 
-	padding: 0; 
-	height: 100%; 
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
 	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
@@ -100,7 +100,7 @@ html, body {
 *:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
 body {
 	margin: 0;
@@ -236,24 +236,24 @@ nav#desktop ul li.menu-item-has-children:hover .sub-menu {
 }
 nav#desktop li.current-menu-parent a, nav#desktop li.current-menu-item a, nav#desktop li.current-menu-parent li.current-menu-item a {
 	color: #000;
-	background: #efefef;	
+	background: #efefef;
 }
-nav#desktop li a:hover, 
-nav#desktop li .sub-menu li a:hover, 
-nav#desktop li.current-menu-item .sub-menu li a:hover, 
-body.single-work nav#desktop li.current_page_parent.work-menu-item a, 
-body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li a:hover, 
-body.single-case_studies nav#desktop li.current-menu-parent.work-menu-item .sub-menu li a, 
-body.single-case_studies nav#desktop li.work-menu-item a, 
+nav#desktop li a:hover,
+nav#desktop li .sub-menu li a:hover,
+nav#desktop li.current-menu-item .sub-menu li a:hover,
+body.single-work nav#desktop li.current_page_parent.work-menu-item a,
+body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li a:hover,
+body.single-case_studies nav#desktop li.current-menu-parent.work-menu-item .sub-menu li a,
+body.single-case_studies nav#desktop li.work-menu-item a,
 body.single-post nav#desktop li.current_page_parent a {
 	color: #000;
-	background: #efefef;	
+	background: #efefef;
 }
-nav#desktop li.current-menu-parent li a, 
-nav#desktop li.current-menu-item .sub-menu li a, 
+nav#desktop li.current-menu-parent li a,
+nav#desktop li.current-menu-item .sub-menu li a,
 body.single-work nav#desktop li.current_page_parent.work-menu-item .sub-menu li a {
 	color: #fff;
-	background: #000;	
+	background: #000;
 }
 nav#desktop li.menu-item-8728 a, nav#desktop li.loop-login a {
 	text-indent: -999em;
@@ -307,7 +307,7 @@ nav#mobile.active {
 	left: 0;
 }
 nav#mobile ul {
-	margin: 0; 
+	margin: 0;
 	padding: 0;
 }
 nav#mobile ul li, nav#mobile ul li a {
@@ -337,26 +337,26 @@ nav#mobile ul li .sub-menu li a:before {
 }
 nav#mobile li.current-menu-parent a, nav#mobile li.current-menu-item a, nav#mobile li.current-menu-parent li.current-menu-item a {
 	color: #000;
-	background: #efefef;	
+	background: #efefef;
 }
-nav#mobile li a:hover, 
-nav#mobile li .sub-menu li a:hover, 
-nav#mobile li.current-menu-item .sub-menu li a:hover, 
+nav#mobile li a:hover,
+nav#mobile li .sub-menu li a:hover,
+nav#mobile li.current-menu-item .sub-menu li a:hover,
 body.post-type-archive-work nav#mobile li.current_page_parent.work-menu-item a,
-body.single-work nav#mobile li.current_page_parent.work-menu-item a, 
-body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a:hover, 
-body.single-case_studies nav#mobile li.current-menu-parent.work-menu-item .sub-menu li a, 
-body.single-case_studies nav#mobile li.work-menu-item a, 
+body.single-work nav#mobile li.current_page_parent.work-menu-item a,
+body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a:hover,
+body.single-case_studies nav#mobile li.current-menu-parent.work-menu-item .sub-menu li a,
+body.single-case_studies nav#mobile li.work-menu-item a,
 body.single-post nav#mobile li.current_page_parent a {
 	color: #000;
-	background: #efefef;	
+	background: #efefef;
 }
-nav#mobile li.current-menu-parent li a, 
-nav#mobile li.current-menu-item .sub-menu li a, 
+nav#mobile li.current-menu-parent li a,
+nav#mobile li.current-menu-item .sub-menu li a,
 body.post-type-archive-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a,
 body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a {
 	color: #fff;
-	background: #000;	
+	background: #000;
 }
 #bodyContent {
 	width: auto;
@@ -517,7 +517,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	margin: 0;
 	word-spacing: 400px;
 	line-height: 1;
-	
+
 }
 #form input[type='text'], #form input[type='email'], #form textarea {
 	border-radius: 10px;
@@ -546,7 +546,7 @@ body.single-work nav#mobile li.current_page_parent.work-menu-item .sub-menu li a
 	background: #fff;
 	text-transform: uppercase;
 	-webkit-transition: color 0.8s ease;
-		transition: color 0.8s ease;	
+		transition: color 0.8s ease;
 }
 #form .pushbutton-wide:active, #form .pushbutton-wide:hover {
 	color: #fff;
@@ -572,7 +572,7 @@ label span {
 }
 .alignright {
 	float: right;
-	margin: 0 0 0 20px;	
+	margin: 0 0 0 20px;
 }
 .alignnone {
 	float: none;
@@ -619,9 +619,9 @@ h2.aligncenter {
 .rollover img {
 	z-index: 10;
 	width: 100%;
-	height: auto;	
+	height: auto;
 	-webkit-transition: opacity 0.8s ease;
-		transition: opacity 0.8s ease;	
+		transition: opacity 0.8s ease;
 }
 .rollover h3 {
 	text-align: center;
@@ -635,7 +635,7 @@ h2.aligncenter {
 	left: 50%;
 	top: 50%;
 	margin: -52px 0 0 -52px;
-	opacity: 0;	
+	opacity: 0;
 	border: 4px solid #000;
 	padding: 20px;
 	z-index: 110;
@@ -649,7 +649,7 @@ h2.aligncenter {
 	left: 50%;
 	top: 50%;
 	margin: -52px 0 0 -52px;
-	opacity: 1;	
+	opacity: 1;
 	border: 4px solid #000;
 	padding: 20px;
 	z-index: 110;
@@ -671,11 +671,11 @@ h2.aligncenter {
 	text-decoration: none !important;
 	border-radius: 4px !important;
 	-webkit-transition: background 0.5s ease;
-		transition: background 0.5s ease;	
+		transition: background 0.5s ease;
 }
 .button:hover {
 	background: #9992c3 !important;
-	color: #fff !important;	
+	color: #fff !important;
 }
 #roundels {
 	display: table;
@@ -707,7 +707,7 @@ h2.aligncenter {
 }
 .roundel:hover {
 	background: #000;
-	color: #fff;	
+	color: #fff;
 }
 .section {
 	padding: 2em 0 !important;
@@ -761,6 +761,10 @@ h2.aligncenter {
 	border-radius: 0 10px 10px 0;
 	border-right-width: 1px !important;
 }
+.single-portfolio .type-portfolio img {
+	width: 100%;
+	height: auto;
+}
 .portfolio .thumbnail {
 	position: relative;
 }
@@ -813,7 +817,7 @@ h2.aligncenter {
 	background: #fff;
 }
 .format-video {
-	
+
 }
 .navigation {
 	display: none;
@@ -839,7 +843,7 @@ h2.aligncenter {
 	left: 50%;
 	top: 50%;
 	margin: -67px 0 0 -65px;
-	opacity: 0;	
+	opacity: 0;
 	border: 4px solid #000;
 	padding: 20px;
 	border-radius: 50%;
@@ -964,8 +968,8 @@ _::-moz-svg-foreign-content, :root #centerPlus span {
 	font-size: 7rem;
 	word-break: keep-all;
 	white-space: wrap;
-	-webkit-hyphens: none; 
-	-moz-hyphens: none; 
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
 	hyphens: none;
 }
 .halfEight.title span h3 {
@@ -1626,11 +1630,11 @@ table > tfoot > tr.danger > th {
 
 /*-- MEDIA QUERIES -- */
 
-@media only screen and (max-width : 1024px) { 
+@media only screen and (max-width : 1024px) {
 	.grid {
 		width: 100%;
 		margin: 0 auto;
-	} 
+	}
 	header {
 		overflow: hidden;
 	}
@@ -1693,7 +1697,7 @@ table > tfoot > tr.danger > th {
 		justify-content: center;
 	}
 	.roundel {
-		display: -webkit-box; 
+		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
@@ -1837,7 +1841,7 @@ table > tfoot > tr.danger > th {
 		justify-content: center;
 	}
 	.roundel {
-		display: -webkit-box; 
+		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
@@ -1988,7 +1992,7 @@ table > tfoot > tr.danger > th {
 		-webkit-animation: cd-bounce-1 0.6s;
 		-moz-animation: cd-bounce-1 0.6s;
 		animation: cd-bounce-1 0.6s;
-	}	
+	}
 
 }
 @-webkit-keyframes cd-bounce-1 {
@@ -2060,7 +2064,7 @@ table > tfoot > tr.danger > th {
 	color: #303e49;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-	
+
 }
 .timelineleft {
 	float: left;
@@ -2070,13 +2074,13 @@ table > tfoot > tr.danger > th {
 	.timelineleft {
 		float: none;
 		margin-right: 20px;
-	}		
+	}
 }
 @media only screen and (max-width: 600px) {
 	.timelineleft {
 		float: none;
 		margin-right: 0;
-	}		
+	}
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
 	display: inline-block;
@@ -2301,7 +2305,7 @@ table > tfoot > tr.danger > th {
 }
 
 /* BACK TO TOP --- */
-	
+
 .cd-top {
 	display: inline-block;
 	height: 60px;

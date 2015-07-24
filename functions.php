@@ -42,7 +42,7 @@ function ee_init()  {
 	add_theme_support( 'custom-header', $header_args );
 	add_theme_support( 'post-formats', array( 'video' ) );
 	$markup = array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', );
-	add_theme_support( 'html5', $markup );	
+	add_theme_support( 'html5', $markup );
 }
 add_action( 'after_setup_theme', 'ee_init' );
 
@@ -83,15 +83,15 @@ function map() {
     if ( is_page(array('contact')) ) {
         wp_enqueue_script('gmap');
         wp_enqueue_script('gmap3');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'map');
 
 function workPage() {
-    if ( is_post_type_archive(array('work', 'case_studies')) ) {
+    if ( is_post_type_archive(array('work', 'case_studies', 'portfolio')) ) {
         wp_enqueue_script('isotope');
         wp_enqueue_script('lazyload');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'workPage');
 
@@ -100,7 +100,7 @@ function skillsPage() {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'skillsPage');
 
@@ -109,7 +109,7 @@ function caseArchive() {
         wp_enqueue_style( 'reveal' );
         wp_enqueue_style( 'default' );
         wp_enqueue_script('reveal');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'caseArchive');
 
@@ -117,7 +117,7 @@ function blogPage() {
     if ( is_home() ) {
         wp_enqueue_script('isotope');
         wp_enqueue_script('lazyload');
-    } 
+    }
 }
 add_action('wp_enqueue_scripts', 'blogPage');
 
@@ -473,6 +473,80 @@ function skills() {
 // Hook into the 'init' action
 add_action( 'init', 'skills', 0 );
 
+// Register Portfolio Post Type
+function portfolio_type() {
+	$labels = array(
+		'name'                => _x( 'Portfolio', 'Post Type General Name', 'ee' ),
+		'singular_name'       => _x( 'Portfolio', 'Post Type Singular Name', 'ee' ),
+		'menu_name'           => __( 'Portfolio', 'ee' ),
+		'parent_item_colon'   => __( 'Parent Portfolio:', 'ee' ),
+		'all_items'           => __( 'Portfolio', 'ee' ),
+		'view_item'           => __( 'View Portfolio', 'ee' ),
+		'add_new_item'        => __( 'Add New Portfolio', 'ee' ),
+		'add_new'             => __( 'Add New', 'ee' ),
+		'edit_item'           => __( 'Edit Portfolio', 'ee' ),
+		'update_item'         => __( 'Update Portfolio', 'ee' ),
+		'search_items'        => __( 'Search Portfolio', 'ee' ),
+		'not_found'           => __( 'Not found', 'ee' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'ee' ),
+	);
+	$args = array(
+		'label'               => __( 'portfolio', 'ee' ),
+		'description'         => __( 'Portfolio', 'ee' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'post-formats' ),
+		'taxonomies'          => array( 'portfolio_category' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'portfolio', $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'portfolio_type', 0 );
+
+// Register Case Study Type Taxonomy
+function portfolio_category() {
+	$labels = array(
+		'name'                       => _x( 'Portfolio Categories', 'Taxonomy General Name', 'ee' ),
+		'singular_name'              => _x( 'Portfolio Categories', 'Taxonomy Singular Name', 'ee' ),
+		'menu_name'                  => __( 'Portfolio Categories', 'ee' ),
+		'all_items'                  => __( 'All Portfolio Categories', 'ee' ),
+		'parent_item'                => __( 'Parent Portfolio Category', 'ee' ),
+		'parent_item_colon'          => __( 'Parent Portfolio Category:', 'ee' ),
+		'new_item_name'              => __( 'New Portfolio Category', 'ee' ),
+		'add_new_item'               => __( 'Add New Portfolio Category', 'ee' ),
+		'edit_item'                  => __( 'Edit Portfolio Category', 'ee' ),
+		'update_item'                => __( 'Update Portfolio Category', 'ee' ),
+		'separate_items_with_commas' => __( 'Separate Portfolio Categories with commas', 'ee' ),
+		'search_items'               => __( 'Search Portfolio Categories', 'ee' ),
+		'add_or_remove_items'        => __( 'Add or remove Portfolio Categories', 'ee' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Portfolio Categories', 'ee' ),
+		'not_found'                  => __( 'Not Found', 'ee' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'portfolio_category', array( 'portfolio' ), $args );
+}
+// Hook into the 'init' action
+add_action( 'init', 'portfolio_category', 0 );
+
 // Register InHouse Post Type
 function inHouse() {
 
@@ -807,7 +881,7 @@ function workStuff( $meta_boxes ) {
     $meta_boxes['workStuff_metabox'] = array(
         'id' => 'workStuff',
         'title' => 'Video',
-        'pages' => array('work'), // post type
+        'pages' => array('work','portfolio'), // post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // Show field names on the left
@@ -879,26 +953,10 @@ function init_meta() {
     }
 }
 
-add_filter( 'post_class', 'work_post_class', 10, 3 );
-if( !function_exists( 'work_post_class' ) ) {
-	function work_post_class( $classes, $class, $ID ) {
-		$taxonomy = 'type';
-		$terms = get_the_terms( (int) $ID, $taxonomy );
-		if( !empty( $terms ) ) {
-			foreach( (array) $terms as $order => $term ) {
-				if( !in_array( $term->slug, $classes ) ) {
-					$classes[] = $term->slug;
-				}
-			}
-		}
-		return $classes;
-	}
-}
-
 add_filter( 'post_class', 'case_post_class', 10, 3 );
 if( !function_exists( 'case_post_class' ) ) {
 	function case_post_class( $classes, $class, $ID ) {
-		$taxonomy = 'cs_type';
+		$taxonomy = array('type', 'cs_type', 'portfolio_category');
 		$terms = get_the_terms( (int) $ID, $taxonomy );
 		if( !empty( $terms ) ) {
 			foreach( (array) $terms as $order => $term ) {
@@ -1060,7 +1118,7 @@ function twtreplace($content) {
 	return $twtreplace;
 }
 
-add_filter('the_content', 'twtreplace');   
+add_filter('the_content', 'twtreplace');
 add_filter('comment_text', 'twtreplace');
 
 function my_login_logo() { ?>
@@ -1119,7 +1177,7 @@ function my_login_logo() { ?>
 			-webkit-text-size-adjust: 100%;
 			-ms-text-size-adjust: 100%;
 			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;	    	
+			-moz-osx-font-smoothing: grayscale;
 	    }
 	    .login label, #login_error {
 		    font-size: 1.8rem;
@@ -1231,9 +1289,9 @@ function basic_wp_seo() {
 			$content = preg_replace('#\n#', ' ', $content);
 			$content = preg_replace('#\s{2,}#', ' ', $content);
 			$content = trim($content);
-		} 
+		}
 	} else {
-		$content = $description;	
+		$content = $description;
 	}
 	$output .= '<meta name="description" content="' . esc_attr($content) . '">' . "\n";
 
